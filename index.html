@@ -1152,6 +1152,151 @@
       .author-social { justify-content: center; }
     }
 
+    /* ─── GET YOUR COPY TODAY ─────────────────────────────── */
+    .buy-section {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .buy-label {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink);
+      padding-bottom: 0.7rem;
+      border-bottom: 2px solid var(--ink);
+      margin-bottom: 1.4rem;
+    }
+
+    .buy-intro {
+      margin-bottom: 2rem;
+    }
+
+    .buy-intro-text {
+      font-family: var(--body-serif);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #3d3530;
+    }
+
+    .buy-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      margin-bottom: 1.5rem;
+    }
+
+    .buy-card {
+      background: var(--paper);
+      display: block;
+      text-decoration: none;
+      color: var(--ink);
+      transition: background 0.2s;
+    }
+
+    .buy-card:hover {
+      background: var(--cream);
+      color: var(--ink);
+    }
+
+    .buy-card:hover .buy-cta-pill {
+      background: var(--rust);
+      color: #fff;
+      border-color: var(--rust);
+    }
+
+    .buy-card-inner {
+      padding: 1.5rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      height: 100%;
+    }
+
+    .buy-retailer-logo {
+      height: 36px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.4rem;
+    }
+
+    .buy-retailer-logo svg {
+      height: 100%;
+      width: auto;
+      max-width: 160px;
+    }
+
+    .buy-card-region {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+    }
+
+    .buy-card-format {
+      font-family: var(--body-serif);
+      font-size: 0.85rem;
+      color: #4a4039;
+      line-height: 1.4;
+      flex: 1;
+    }
+
+    .buy-cta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--sans);
+      font-size: 0.63rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--rust);
+      border: 1px solid var(--rust);
+      padding: 0.45rem 0.8rem;
+      margin-top: 0.6rem;
+      align-self: flex-start;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .buy-footer-note {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      color: var(--warm-gray);
+      text-align: center;
+      padding: 0.8rem;
+      background: var(--cream);
+      border: 1px solid var(--rule);
+    }
+
+    .buy-footer-note strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    @media (max-width: 1100px) {
+      .buy-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 750px) {
+      .buy-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .buy-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* ─── SCROLL REVEAL ───────────────────────────────────── */
     .reveal {
       opacity: 0;
@@ -1610,6 +1755,114 @@
             Read more about the author <span class="arrow">→</span>
           </a>
         </div>
+      </div>
+    </section>
+
+    <!-- ── GET YOUR COPY TODAY ────────────────────────────── -->
+    <section class="buy-section reveal">
+      <div class="buy-label">Get Your Copy Today</div>
+      <div class="buy-intro">
+        <p class="buy-intro-text"><em>Building the AI Bank</em> is available from all major booksellers worldwide. Choose your preferred retailer below.</p>
+      </div>
+      <div class="buy-grid">
+
+        <a href="https://www.amazon.com/s?k=Building+the+AI+Bank+Emmanuel+Daniel" target="_blank" rel="noopener" class="buy-card">
+          <div class="buy-card-inner">
+            <div class="buy-retailer-logo amazon">
+              <svg viewBox="0 0 120 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <text x="0" y="26" font-family="Arial Black, sans-serif" font-size="22" font-weight="900" fill="#FF9900">amazon</text>
+              </svg>
+            </div>
+            <div class="buy-card-region">US · Global</div>
+            <div class="buy-card-format">Hardcover · Paperback · Kindle</div>
+            <div class="buy-cta-pill">Buy on Amazon <span>→</span></div>
+          </div>
+        </a>
+
+        <a href="https://books.google.com/books?q=Building+the+AI+Bank+Emmanuel+Daniel" target="_blank" rel="noopener" class="buy-card">
+          <div class="buy-card-inner">
+            <div class="buy-retailer-logo google-books">
+              <svg viewBox="0 0 120 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <text x="0" y="26" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#4285F4">Google </text>
+                <text x="72" y="26" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#EA4335">Books</text>
+              </svg>
+            </div>
+            <div class="buy-card-region">US · Global</div>
+            <div class="buy-card-format">eBook · Preview</div>
+            <div class="buy-cta-pill">Buy on Google Books <span>→</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.barnesandnoble.com/s/Building+the+AI+Bank+Emmanuel+Daniel" target="_blank" rel="noopener" class="buy-card">
+          <div class="buy-card-inner">
+            <div class="buy-retailer-logo bn">
+              <svg viewBox="0 0 140 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <text x="0" y="26" font-family="Georgia, serif" font-size="17" font-weight="700" fill="#1d3557">Barnes &amp; Noble</text>
+              </svg>
+            </div>
+            <div class="buy-card-region">US</div>
+            <div class="buy-card-format">Hardcover · Paperback · Nook</div>
+            <div class="buy-cta-pill">Buy on B&amp;N <span>→</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.amazon.co.uk/s?k=Building+the+AI+Bank+Emmanuel+Daniel" target="_blank" rel="noopener" class="buy-card">
+          <div class="buy-card-inner">
+            <div class="buy-retailer-logo amazon-uk">
+              <svg viewBox="0 0 140 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <text x="0" y="26" font-family="Arial Black, sans-serif" font-size="22" font-weight="900" fill="#FF9900">amazon</text>
+                <text x="97" y="26" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#232f3e">.co.uk</text>
+              </svg>
+            </div>
+            <div class="buy-card-region">United Kingdom</div>
+            <div class="buy-card-format">Hardcover · Paperback · Kindle</div>
+            <div class="buy-cta-pill">Buy on Amazon UK <span>→</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.waterstones.com/books/search/term/Building+the+AI+Bank" target="_blank" rel="noopener" class="buy-card">
+          <div class="buy-card-inner">
+            <div class="buy-retailer-logo waterstones">
+              <svg viewBox="0 0 160 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <text x="0" y="26" font-family="Georgia, serif" font-size="18" font-weight="700" fill="#003b5c">Waterstones</text>
+              </svg>
+            </div>
+            <div class="buy-card-region">United Kingdom</div>
+            <div class="buy-card-format">Hardcover · Paperback</div>
+            <div class="buy-cta-pill">Buy on Waterstones <span>→</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.bookdepository.com/search?searchTerm=Building+the+AI+Bank+Emmanuel+Daniel" target="_blank" rel="noopener" class="buy-card">
+          <div class="buy-card-inner">
+            <div class="buy-retailer-logo bookdep">
+              <svg viewBox="0 0 170 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <text x="0" y="26" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#e05c1a">Book Depository</text>
+              </svg>
+            </div>
+            <div class="buy-card-region">International · Free Delivery</div>
+            <div class="buy-card-format">Paperback · Hardcover</div>
+            <div class="buy-cta-pill">Buy on Book Depository <span>→</span></div>
+          </div>
+        </a>
+
+        <a href="https://search.jd.com/Search?keyword=Building+the+AI+Bank+Emmanuel+Daniel" target="_blank" rel="noopener" class="buy-card">
+          <div class="buy-card-inner">
+            <div class="buy-retailer-logo jd">
+              <svg viewBox="0 0 80 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="0" y="3" width="70" height="28" rx="4" fill="#CC0000"/>
+                <text x="8" y="24" font-family="Arial Black, sans-serif" font-size="17" font-weight="900" fill="#ffffff">JD.com</text>
+              </svg>
+            </div>
+            <div class="buy-card-region">China · Asia</div>
+            <div class="buy-card-format">Hardcover · Paperback</div>
+            <div class="buy-cta-pill">Buy on JD.com <span>→</span></div>
+          </div>
+        </a>
+
+      </div>
+      <div class="buy-footer-note">
+        Also available through your local independent bookshop. Ask for ISBN <strong>978-981-18-9501-0</strong>.
       </div>
     </section>
 
