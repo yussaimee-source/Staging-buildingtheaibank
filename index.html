@@ -599,43 +599,63 @@
     }
 
     .book-cover-mock {
-      width: 100px;
-      height: 140px;
-      background: linear-gradient(160deg, #2a2320 0%, #b5451b 50%, #4a1a0a 100%);
+      display: none; /* replaced by other-book-cover-img */
+    }
+
+    .other-book-cover-link {
+      display: block;
       margin: 0 auto 1rem;
+      text-decoration: none;
+    }
+
+    .other-book-cover-img {
+      width: 100%;
+      max-width: 220px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 4px 6px 20px rgba(0,0,0,0.4);
+      transition: opacity 0.2s;
+    }
+
+    .other-book-cover-link:hover .other-book-cover-img {
+      opacity: 0.88;
+    }
+
+    .other-book-cover-fallback {
+      width: 100%;
+      max-width: 220px;
+      height: 140px;
+      margin: 0 auto;
+      background: linear-gradient(160deg, #2a2320 0%, #b5451b 50%, #4a1a0a 100%);
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 0.8rem;
-      box-shadow: 4px 6px 20px rgba(0,0,0,0.4);
-    }
-
-    .book-cover-mock .cover-title {
       font-family: var(--serif);
-      font-size: 0.6rem;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .other-book-title {
+      font-family: var(--serif);
+      font-size: 1rem;
       font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 0.2rem;
       line-height: 1.3;
-      color: #fff;
-      text-align: center;
-      margin-bottom: 0.5rem;
     }
 
-    .book-cover-mock .cover-line {
-      width: 30px;
-      height: 1px;
-      background: var(--gold);
-      margin: 0 auto 0.5rem;
-    }
-
-    .book-cover-mock .cover-author {
+    .other-book-subtitle {
       font-family: var(--sans);
-      font-size: 0.48rem;
-      letter-spacing: 0.12em;
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.6);
-      text-align: center;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0.9rem;
     }
 
     .book-blurb {
@@ -1560,16 +1580,24 @@
       <!-- ── SIDEBAR ─────────────────────────────────────── -->
       <aside class="sidebar">
 
-        <!-- Book promo -->
+        <!-- My Other Book -->
         <div class="sidebar-widget book-widget reveal">
-          <div class="widget-heading">The Book</div>
-          <div class="book-cover-mock">
-            <div class="cover-title">Building the AI Bank</div>
-            <div class="cover-line"></div>
-            <div class="cover-author">Emmanuel Daniel</div>
-          </div>
-          <p class="book-blurb">"The most rigorous account yet of what artificial intelligence actually means for the institutions that hold our money."</p>
-          <a href="#" class="btn-book">Pre-order Now</a>
+          <div class="widget-heading">My Other Book</div>
+          <a href="https://www.emmanueldaniel.com/the-great-transition/" target="_blank" rel="noopener" class="other-book-cover-link">
+            <img
+              src="https://www.emmanueldaniel.com/wp-content/uploads/2022/07/main-banner-book.png"
+              alt="The Great Transition – The Personalization of Finance is Here"
+              class="other-book-cover-img"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
+            />
+            <div class="other-book-cover-fallback" style="display:none;">
+              <span>The Great Transition</span>
+            </div>
+          </a>
+          <div class="other-book-title">The Great Transition</div>
+          <div class="other-book-subtitle">The Personalization of Finance is Here</div>
+          <p class="book-blurb">The banking industry is moving from a platform era into a new age of radical personalization — where users, not institutions, will control how finance is originated, shared and spent. Emmanuel Daniel charts this transformation through the lens of ice, identity and the financialization of everything.</p>
+          <a href="https://www.emmanueldaniel.com/the-great-transition/" target="_blank" rel="noopener" class="btn-book">Learn More →</a>
         </div>
 
         <!-- Upcoming Events -->
