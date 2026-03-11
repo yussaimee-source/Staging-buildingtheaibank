@@ -1,6 +1,6 @@
 /* ============================================================
    Staging: Building the AI Bank — style.css
-   Updated: Speaking subpage + Books + Blog + all previous sections
+   Updated: Speaking engagement card thumbnails + all sections
    Google Fonts:
    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
    ============================================================ */
@@ -1520,67 +1520,139 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   color: #4a4039;
 }
 
-/* Engagements list */
-.speaking-engagements-list {
-  border-top: 1px solid var(--rule);
-  margin-bottom: 1.5rem;
+/* Engagements card grid */
+.speaking-engagements-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  margin-bottom: 1.8rem;
 }
 
-.speaking-engagement-row {
-  display: grid;
-  grid-template-columns: 80px 1fr 24px;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--rule);
+.eng-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
   text-decoration: none;
   color: var(--ink);
-  transition: background 0.15s;
+  transition: background 0.2s;
 }
 
-.speaking-engagement-row:hover {
+.eng-card:hover {
   background: var(--cream);
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  margin: 0 -0.5rem;
 }
 
-.speaking-engagement-date {
+/* Thumbnail area */
+.eng-card-thumb {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.eng-card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.35s ease;
+  z-index: 1;
+}
+
+.eng-card:hover .eng-card-img {
+  transform: scale(1.05);
+}
+
+/* Unique gradient backgrounds — shown always, img sits on top */
+.eng-card-thumb--1 { background: linear-gradient(135deg, #0d2137 0%, #1a4a6b 60%, #c9a84c 100%); }
+.eng-card-thumb--2 { background: linear-gradient(135deg, #1a2e1a 0%, #2d5a30 60%, #b5451b 100%); }
+.eng-card-thumb--3 { background: linear-gradient(135deg, #1a0d2e 0%, #3d1a5a 60%, #c9a84c 100%); }
+.eng-card-thumb--4 { background: linear-gradient(135deg, #1a0a0a 0%, #5a1a1a 60%, #b5451b 100%); }
+.eng-card-thumb--5 { background: linear-gradient(135deg, #0a1a2e 0%, #1a3d5a 60%, #2d7a6a 100%); }
+.eng-card-thumb--6 { background: linear-gradient(135deg, #2e1a0a 0%, #5a3010 60%, #c9a84c 100%); }
+.eng-card-thumb--7 { background: linear-gradient(135deg, #0a0a2e 0%, #1a1a5a 60%, #b5451b 100%); }
+.eng-card-thumb--8 { background: linear-gradient(135deg, #2e0a1a 0%, #5a1030 60%, #c9a84c 100%); }
+.eng-card-thumb--9 { background: linear-gradient(135deg, #0a2e1a 0%, #1a5a30 60%, #1d3557 100%); }
+
+/* Overlay: date badge in bottom-left */
+.eng-card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  padding: 0.7rem 0.8rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 55%);
+}
+
+.eng-card-date {
   font-family: var(--sans);
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--warm-gray);
-  white-space: nowrap;
+  color: var(--gold);
+  background: rgba(0,0,0,0.45);
+  padding: 0.22rem 0.55rem;
 }
 
-.speaking-engagement-title {
-  font-family: var(--serif);
-  font-size: 0.98rem;
+/* Card body */
+.eng-card-body {
+  padding: 1rem 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.eng-card-type {
+  font-family: var(--sans);
+  font-size: 0.55rem;
   font-weight: 600;
-  color: var(--ink);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rust);
+}
+
+.eng-card-title {
+  font-family: var(--serif);
+  font-size: 0.9rem;
+  font-weight: 700;
   line-height: 1.3;
-  margin-bottom: 0.2rem;
+  color: var(--ink);
+  flex: 1;
 }
 
-.speaking-engagement-venue {
+.eng-card-arrow {
   font-family: var(--sans);
-  font-size: 0.62rem;
-  color: var(--warm-gray);
-  letter-spacing: 0.04em;
-}
-
-.speaking-engagement-arrow {
-  font-family: var(--sans);
-  font-size: 1rem;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   color: var(--rust);
   opacity: 0;
-  transition: opacity 0.15s;
+  transition: opacity 0.2s;
+  margin-top: 0.3rem;
 }
 
-.speaking-engagement-row:hover .speaking-engagement-arrow {
+.eng-card:hover .eng-card-arrow {
   opacity: 1;
+}
+
+@media (max-width: 900px) {
+  .speaking-engagements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .speaking-engagements-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .speaking-all-link {

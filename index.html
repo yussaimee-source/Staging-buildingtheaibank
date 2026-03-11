@@ -1524,67 +1524,139 @@
       color: #4a4039;
     }
 
-    /* Engagements list */
-    .speaking-engagements-list {
-      border-top: 1px solid var(--rule);
-      margin-bottom: 1.5rem;
+    /* Engagements card grid */
+    .speaking-engagements-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      margin-bottom: 1.8rem;
     }
 
-    .speaking-engagement-row {
-      display: grid;
-      grid-template-columns: 80px 1fr 24px;
-      align-items: center;
-      gap: 1.5rem;
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--rule);
+    .eng-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--paper);
       text-decoration: none;
       color: var(--ink);
-      transition: background 0.15s;
+      transition: background 0.2s;
     }
 
-    .speaking-engagement-row:hover {
+    .eng-card:hover {
       background: var(--cream);
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-      margin: 0 -0.5rem;
     }
 
-    .speaking-engagement-date {
+    /* Thumbnail area */
+    .eng-card-thumb {
+      position: relative;
+      width: 100%;
+      height: 160px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .eng-card-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform 0.35s ease;
+      z-index: 1;
+    }
+
+    .eng-card:hover .eng-card-img {
+      transform: scale(1.05);
+    }
+
+    /* Unique gradient backgrounds — shown always, img sits on top */
+    .eng-card-thumb--1 { background: linear-gradient(135deg, #0d2137 0%, #1a4a6b 60%, #c9a84c 100%); }
+    .eng-card-thumb--2 { background: linear-gradient(135deg, #1a2e1a 0%, #2d5a30 60%, #b5451b 100%); }
+    .eng-card-thumb--3 { background: linear-gradient(135deg, #1a0d2e 0%, #3d1a5a 60%, #c9a84c 100%); }
+    .eng-card-thumb--4 { background: linear-gradient(135deg, #1a0a0a 0%, #5a1a1a 60%, #b5451b 100%); }
+    .eng-card-thumb--5 { background: linear-gradient(135deg, #0a1a2e 0%, #1a3d5a 60%, #2d7a6a 100%); }
+    .eng-card-thumb--6 { background: linear-gradient(135deg, #2e1a0a 0%, #5a3010 60%, #c9a84c 100%); }
+    .eng-card-thumb--7 { background: linear-gradient(135deg, #0a0a2e 0%, #1a1a5a 60%, #b5451b 100%); }
+    .eng-card-thumb--8 { background: linear-gradient(135deg, #2e0a1a 0%, #5a1030 60%, #c9a84c 100%); }
+    .eng-card-thumb--9 { background: linear-gradient(135deg, #0a2e1a 0%, #1a5a30 60%, #1d3557 100%); }
+
+    /* Overlay: date badge in bottom-left */
+    .eng-card-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      align-items: flex-end;
+      padding: 0.7rem 0.8rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 55%);
+    }
+
+    .eng-card-date {
       font-family: var(--sans);
-      font-size: 0.6rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--warm-gray);
-      white-space: nowrap;
+      color: var(--gold);
+      background: rgba(0,0,0,0.45);
+      padding: 0.22rem 0.55rem;
     }
 
-    .speaking-engagement-title {
-      font-family: var(--serif);
-      font-size: 0.98rem;
+    /* Card body */
+    .eng-card-body {
+      padding: 1rem 1.1rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      flex: 1;
+    }
+
+    .eng-card-type {
+      font-family: var(--sans);
+      font-size: 0.55rem;
       font-weight: 600;
-      color: var(--ink);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--rust);
+    }
+
+    .eng-card-title {
+      font-family: var(--serif);
+      font-size: 0.9rem;
+      font-weight: 700;
       line-height: 1.3;
-      margin-bottom: 0.2rem;
+      color: var(--ink);
+      flex: 1;
     }
 
-    .speaking-engagement-venue {
+    .eng-card-arrow {
       font-family: var(--sans);
-      font-size: 0.62rem;
-      color: var(--warm-gray);
-      letter-spacing: 0.04em;
-    }
-
-    .speaking-engagement-arrow {
-      font-family: var(--sans);
-      font-size: 1rem;
+      font-size: 0.58rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
       color: var(--rust);
       opacity: 0;
-      transition: opacity 0.15s;
+      transition: opacity 0.2s;
+      margin-top: 0.3rem;
     }
 
-    .speaking-engagement-row:hover .speaking-engagement-arrow {
+    .eng-card:hover .eng-card-arrow {
       opacity: 1;
+    }
+
+    @media (max-width: 900px) {
+      .speaking-engagements-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 540px) {
+      .speaking-engagements-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .speaking-all-link {
@@ -3368,87 +3440,132 @@
     <!-- ── RECENT SPEAKING ENGAGEMENTS ──────────────────────── -->
     <section class="speaking-engagements reveal">
       <div class="speaking-section-label">Recent Engagements</div>
-      <div class="speaking-engagements-list">
+      <div class="speaking-engagements-grid">
 
-        <a href="https://www.emmanueldaniel.com/the-future-wont-ask-permission/" target="_blank" rel="noopener" class="speaking-engagement-row">
-          <div class="speaking-engagement-date">Jun 2025</div>
-          <div class="speaking-engagement-body">
-            <div class="speaking-engagement-title">How Innovation Hubs Get Created</div>
-            <div class="speaking-engagement-venue">Keynote Presentation</div>
+        <a href="https://www.emmanueldaniel.com/the-future-wont-ask-permission/" target="_blank" rel="noopener" class="eng-card">
+          <div class="eng-card-thumb eng-card-thumb--1">
+            <img src="https://www.emmanueldaniel.com/wp-content/uploads/2025/06/innovation-hubs.jpg" alt="How Innovation Hubs Get Created" class="eng-card-img" onerror="this.style.display='none'"/>
+            <div class="eng-card-overlay">
+              <div class="eng-card-date">Jun 2025</div>
+            </div>
           </div>
-          <div class="speaking-engagement-arrow">→</div>
+          <div class="eng-card-body">
+            <div class="eng-card-type">Keynote Presentation</div>
+            <h3 class="eng-card-title">How Innovation Hubs Get Created</h3>
+            <div class="eng-card-arrow">Read more →</div>
+          </div>
         </a>
 
-        <a href="https://www.emmanueldaniel.com/trust-the-data-take-the-leap/" target="_blank" rel="noopener" class="speaking-engagement-row">
-          <div class="speaking-engagement-date">May 2025</div>
-          <div class="speaking-engagement-body">
-            <div class="speaking-engagement-title">Trust the Data, Take the Leap!</div>
-            <div class="speaking-engagement-venue">Speech &amp; Presentation</div>
+        <a href="https://www.emmanueldaniel.com/trust-the-data-take-the-leap/" target="_blank" rel="noopener" class="eng-card">
+          <div class="eng-card-thumb eng-card-thumb--2">
+            <img src="https://www.emmanueldaniel.com/wp-content/uploads/2025/05/trust-data.jpg" alt="Trust the Data Take the Leap" class="eng-card-img" onerror="this.style.display='none'"/>
+            <div class="eng-card-overlay">
+              <div class="eng-card-date">May 2025</div>
+            </div>
           </div>
-          <div class="speaking-engagement-arrow">→</div>
+          <div class="eng-card-body">
+            <div class="eng-card-type">Speech &amp; Presentation</div>
+            <h3 class="eng-card-title">Trust the Data, Take the Leap!</h3>
+            <div class="eng-card-arrow">Read more →</div>
+          </div>
         </a>
 
-        <a href="https://www.emmanueldaniel.com/ai-and-immortality-in-the-year-of-the-snake/" target="_blank" rel="noopener" class="speaking-engagement-row">
-          <div class="speaking-engagement-date">Mar 2025</div>
-          <div class="speaking-engagement-body">
-            <div class="speaking-engagement-title">AI and Immortality in the Year of the Snake</div>
-            <div class="speaking-engagement-venue">Keynote Address</div>
+        <a href="https://www.emmanueldaniel.com/ai-and-immortality-in-the-year-of-the-snake/" target="_blank" rel="noopener" class="eng-card">
+          <div class="eng-card-thumb eng-card-thumb--3">
+            <img src="https://www.emmanueldaniel.com/wp-content/uploads/2025/03/ai-immortality-snake.jpg" alt="AI and Immortality" class="eng-card-img" onerror="this.style.display='none'"/>
+            <div class="eng-card-overlay">
+              <div class="eng-card-date">Mar 2025</div>
+            </div>
           </div>
-          <div class="speaking-engagement-arrow">→</div>
+          <div class="eng-card-body">
+            <div class="eng-card-type">Keynote Address</div>
+            <h3 class="eng-card-title">AI and Immortality in the Year of the Snake</h3>
+            <div class="eng-card-arrow">Read more →</div>
+          </div>
         </a>
 
-        <a href="https://www.emmanueldaniel.com/sharing-my-insights-on-financial-innovation-at-the-firstbank-fintech-summit-2024/" target="_blank" rel="noopener" class="speaking-engagement-row">
-          <div class="speaking-engagement-date">Jan 2025</div>
-          <div class="speaking-engagement-body">
-            <div class="speaking-engagement-title">DeFi is Setting the Rules by Which Banking Will Be Run</div>
-            <div class="speaking-engagement-venue">FirstBank Fintech Summit 2024</div>
+        <a href="https://www.emmanueldaniel.com/sharing-my-insights-on-financial-innovation-at-the-firstbank-fintech-summit-2024/" target="_blank" rel="noopener" class="eng-card">
+          <div class="eng-card-thumb eng-card-thumb--4">
+            <img src="https://www.emmanueldaniel.com/wp-content/uploads/2025/01/firstbank-fintech-summit.jpg" alt="FirstBank Fintech Summit" class="eng-card-img" onerror="this.style.display='none'"/>
+            <div class="eng-card-overlay">
+              <div class="eng-card-date">Jan 2025</div>
+            </div>
           </div>
-          <div class="speaking-engagement-arrow">→</div>
+          <div class="eng-card-body">
+            <div class="eng-card-type">FirstBank Fintech Summit 2024</div>
+            <h3 class="eng-card-title">DeFi is Setting the Rules by Which Banking Will Be Run</h3>
+            <div class="eng-card-arrow">Read more →</div>
+          </div>
         </a>
 
-        <a href="https://www.emmanueldaniel.com/the-future-of-financial-centers/" target="_blank" rel="noopener" class="speaking-engagement-row">
-          <div class="speaking-engagement-date">Dec 2024</div>
-          <div class="speaking-engagement-body">
-            <div class="speaking-engagement-title">The Future of Financial Centres</div>
-            <div class="speaking-engagement-venue">Opening Keynote — Finance Malta Annual Conference 2024</div>
+        <a href="https://www.emmanueldaniel.com/the-future-of-financial-centers/" target="_blank" rel="noopener" class="eng-card">
+          <div class="eng-card-thumb eng-card-thumb--5">
+            <img src="https://www.emmanueldaniel.com/wp-content/uploads/2024/12/finance-malta-2024.jpg" alt="Finance Malta Conference" class="eng-card-img" onerror="this.style.display='none'"/>
+            <div class="eng-card-overlay">
+              <div class="eng-card-date">Dec 2024</div>
+            </div>
           </div>
-          <div class="speaking-engagement-arrow">→</div>
+          <div class="eng-card-body">
+            <div class="eng-card-type">Opening Keynote · Finance Malta 2024</div>
+            <h3 class="eng-card-title">The Future of Financial Centres</h3>
+            <div class="eng-card-arrow">Read more →</div>
+          </div>
         </a>
 
-        <a href="https://www.emmanueldaniel.com/what-will-we-be-worrying-about-10-years-from-now/" target="_blank" rel="noopener" class="speaking-engagement-row">
-          <div class="speaking-engagement-date">Jul 2024</div>
-          <div class="speaking-engagement-body">
-            <div class="speaking-engagement-title">What Will We Be Worrying About 10 Years From Now?</div>
-            <div class="speaking-engagement-venue">Awards Dinner Speech</div>
+        <a href="https://www.emmanueldaniel.com/what-will-we-be-worrying-about-10-years-from-now/" target="_blank" rel="noopener" class="eng-card">
+          <div class="eng-card-thumb eng-card-thumb--6">
+            <img src="https://www.emmanueldaniel.com/wp-content/uploads/2024/07/ED_Award_Speech_Banner.jpg" alt="10 Years From Now" class="eng-card-img" onerror="this.style.display='none'"/>
+            <div class="eng-card-overlay">
+              <div class="eng-card-date">Jul 2024</div>
+            </div>
           </div>
-          <div class="speaking-engagement-arrow">→</div>
+          <div class="eng-card-body">
+            <div class="eng-card-type">Awards Dinner Speech</div>
+            <h3 class="eng-card-title">What Will We Be Worrying About 10 Years From Now?</h3>
+            <div class="eng-card-arrow">Read more →</div>
+          </div>
         </a>
 
-        <a href="https://www.emmanueldaniel.com/innovating-finance-at-the-25th-asian-banker-summit/" target="_blank" rel="noopener" class="speaking-engagement-row">
-          <div class="speaking-engagement-date">Jul 2024</div>
-          <div class="speaking-engagement-body">
-            <div class="speaking-engagement-title">DeFi is Now Forcing Change in Banking</div>
-            <div class="speaking-engagement-venue">Welcome Address — 25th Asian Banker Summit, Hong Kong</div>
+        <a href="https://www.emmanueldaniel.com/innovating-finance-at-the-25th-asian-banker-summit/" target="_blank" rel="noopener" class="eng-card">
+          <div class="eng-card-thumb eng-card-thumb--7">
+            <img src="https://www.emmanueldaniel.com/wp-content/uploads/2024/07/asian-banker-summit-hk.jpg" alt="Asian Banker Summit Hong Kong" class="eng-card-img" onerror="this.style.display='none'"/>
+            <div class="eng-card-overlay">
+              <div class="eng-card-date">Jul 2024</div>
+            </div>
           </div>
-          <div class="speaking-engagement-arrow">→</div>
+          <div class="eng-card-body">
+            <div class="eng-card-type">Welcome Address · Asian Banker Summit, HK</div>
+            <h3 class="eng-card-title">DeFi is Now Forcing Change in Banking</h3>
+            <div class="eng-card-arrow">Read more →</div>
+          </div>
         </a>
 
-        <a href="https://www.emmanueldaniel.com/taylor-swifts-digital-economics-in-finance/" target="_blank" rel="noopener" class="speaking-engagement-row">
-          <div class="speaking-engagement-date">May 2024</div>
-          <div class="speaking-engagement-body">
-            <div class="speaking-engagement-title">Taylor Swift's Digital Economics in Finance</div>
-            <div class="speaking-engagement-venue">Awards Dinner Speech</div>
+        <a href="https://www.emmanueldaniel.com/taylor-swifts-digital-economics-in-finance/" target="_blank" rel="noopener" class="eng-card">
+          <div class="eng-card-thumb eng-card-thumb--8">
+            <img src="https://www.emmanueldaniel.com/wp-content/uploads/2024/05/taylor-swift-finance.jpg" alt="Taylor Swift Digital Economics" class="eng-card-img" onerror="this.style.display='none'"/>
+            <div class="eng-card-overlay">
+              <div class="eng-card-date">May 2024</div>
+            </div>
           </div>
-          <div class="speaking-engagement-arrow">→</div>
+          <div class="eng-card-body">
+            <div class="eng-card-type">Awards Dinner Speech</div>
+            <h3 class="eng-card-title">Taylor Swift's Digital Economics in Finance</h3>
+            <div class="eng-card-arrow">Read more →</div>
+          </div>
         </a>
 
-        <a href="https://www.emmanueldaniel.com/creating-a-successful-global-financial-centre/" target="_blank" rel="noopener" class="speaking-engagement-row">
-          <div class="speaking-engagement-date">Feb 2024</div>
-          <div class="speaking-engagement-body">
-            <div class="speaking-engagement-title">Creating a Successful International Financial Centre</div>
-            <div class="speaking-engagement-venue">Keynote — 20th China International Finance Forum (CIFF), Shanghai</div>
+        <a href="https://www.emmanueldaniel.com/creating-a-successful-global-financial-centre/" target="_blank" rel="noopener" class="eng-card">
+          <div class="eng-card-thumb eng-card-thumb--9">
+            <img src="https://www.emmanueldaniel.com/wp-content/uploads/2024/02/ciff-shanghai-2024.jpg" alt="China International Finance Forum Shanghai" class="eng-card-img" onerror="this.style.display='none'"/>
+            <div class="eng-card-overlay">
+              <div class="eng-card-date">Feb 2024</div>
+            </div>
           </div>
-          <div class="speaking-engagement-arrow">→</div>
+          <div class="eng-card-body">
+            <div class="eng-card-type">Keynote · CIFF, Shanghai</div>
+            <h3 class="eng-card-title">Creating a Successful International Financial Centre</h3>
+            <div class="eng-card-arrow">Read more →</div>
+          </div>
         </a>
 
       </div>
@@ -3465,17 +3582,17 @@
         <p class="speaking-cta-body">Emmanuel accepts a select number of speaking engagements each year. All presentations are tailored to the client's agenda, audience and objectives. He does not deliver off-the-shelf keynotes.</p>
         <p class="speaking-cta-body">To enquire about availability, fees and format, please contact his team directly:</p>
         <div class="speaking-contacts">
-          <a href="mailto:cyu@tab.global" class="speaking-contact-item">
+          <a href="/cdn-cgi/l/email-protection#1c7f65695c687d7e327b70737e7d70" class="speaking-contact-item">
             <div class="speaking-contact-name">Cindy Yu Si Yu</div>
-            <div class="speaking-contact-email">cyu@tab.global</div>
+            <div class="speaking-contact-email"><span class="__cf_email__" data-cfemail="a8cbd1dde8dcc9ca86cfc4c7cac9c4">[email&#160;protected]</span></div>
           </a>
-          <a href="mailto:efoong@tab.global" class="speaking-contact-item">
+          <a href="/cdn-cgi/l/email-protection#2441424b4b4a43645045460a43484b464548" class="speaking-contact-item">
             <div class="speaking-contact-name">Eunice Foong</div>
-            <div class="speaking-contact-email">efoong@tab.global</div>
+            <div class="speaking-contact-email"><span class="__cf_email__" data-cfemail="cda8aba2a2a3aa8db9acafe3aaa1a2afaca1">[email&#160;protected]</span></div>
           </a>
-          <a href="mailto:jong@tab.global" class="speaking-contact-item">
+          <a href="/cdn-cgi/l/email-protection#177d7879705763767539707b7875767b" class="speaking-contact-item">
             <div class="speaking-contact-name">Jerome Ong</div>
-            <div class="speaking-contact-email">jong@tab.global</div>
+            <div class="speaking-contact-email"><span class="__cf_email__" data-cfemail="4a2025242d0a3e2b28642d2625282b26">[email&#160;protected]</span></div>
           </a>
         </div>
       </div>
@@ -3537,7 +3654,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const homePage     = document.querySelector('main:not(#blog-page):not(#books-page):not(#speaking-page)');
   const blogPage     = document.getElementById('blog-page');
   const booksPage    = document.getElementById('books-page');
@@ -3649,20 +3766,4 @@
   }
 
   // ─── Active nav on scroll ───────────────────────────────────
-  // Simple header hide on deep scroll, show on scroll up
-  let lastScrollY = window.scrollY;
-  const siteHeader = document.querySelector('.site-header');
-
-  window.addEventListener('scroll', () => {
-    const currentY = window.scrollY;
-    if (currentY > 200 && currentY > lastScrollY) {
-      siteHeader.style.transform = 'translateY(-100%)';
-      siteHeader.style.transition = 'transform 0.35s ease';
-    } else {
-      siteHeader.style.transform = '';
-    }
-    lastScrollY = currentY;
-  }, { passive: true });
-</script>
-</body>
-</html>
+  // Simple header hide on deep scroll, show on scr
