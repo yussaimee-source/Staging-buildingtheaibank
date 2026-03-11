@@ -3778,4 +3778,24 @@
   }
 
   // ─── Active nav on scroll ───────────────────────────────────
-  // Simple header hide on deep scroll, show on scr
+  // Simple header hide on deep scroll, show on scroll up
+  let lastScroll = 0;
+  const siteHeader = document.querySelector('.site-header');
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+    if (currentScroll > 120) {
+      if (currentScroll > lastScroll) {
+        siteHeader.style.transform = 'translateY(-100%)';
+        siteHeader.style.transition = 'transform 0.3s ease';
+      } else {
+        siteHeader.style.transform = 'translateY(0)';
+      }
+    } else {
+      siteHeader.style.transform = 'translateY(0)';
+    }
+    lastScroll = currentScroll;
+  });
+
+</script>
+</body>
+</html>
