@@ -989,6 +989,169 @@
       padding: 0.9rem;
     }
 
+    /* ─── ABOUT THE AUTHOR ────────────────────────────────── */
+    .author-section {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .author-label {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink);
+      padding-bottom: 0.7rem;
+      border-bottom: 2px solid var(--ink);
+      margin-bottom: 2rem;
+    }
+
+    .author-grid {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .author-image-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .author-img-wrap {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--rule);
+      background: var(--cream);
+      flex-shrink: 0;
+    }
+
+    .author-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .author-img-fallback {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #2a2320, #4a3f35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .author-name-block {
+      text-align: center;
+    }
+
+    .author-name-large {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+    }
+
+    .author-title-line {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+      margin-bottom: 0.8rem;
+    }
+
+    .author-social {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+
+    .author-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--rule);
+      background: var(--paper);
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--warm-gray);
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+
+    .author-social a:hover {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
+
+    .author-content-col {}
+
+    .author-bio-text {
+      font-family: var(--body-serif);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #3d3530;
+      margin-bottom: 1.1rem;
+    }
+
+    .author-read-more {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--rust);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--rust);
+      padding-bottom: 1px;
+      transition: gap 0.2s;
+      margin-top: 0.3rem;
+    }
+
+    .author-read-more:hover { gap: 0.8rem; color: var(--rust); }
+    .author-read-more .arrow { font-size: 0.85rem; }
+
+    @media (max-width: 900px) {
+      .author-grid {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+      }
+      .author-image-col {
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+      }
+      .author-name-block { text-align: left; }
+      .author-social { justify-content: flex-start; }
+    }
+
+    @media (max-width: 600px) {
+      .author-image-col {
+        flex-direction: column;
+        align-items: center;
+      }
+      .author-name-block { text-align: center; }
+      .author-social { justify-content: center; }
+    }
+
     /* ─── SCROLL REVEAL ───────────────────────────────────── */
     .reveal {
       opacity: 0;
@@ -1409,6 +1572,44 @@
           "Every bank is a story about what a society chooses to remember and what it agrees to forget. AI is changing the author, not the subject."
         </blockquote>
         <cite>— Emmanuel Daniel, <em>Building the AI Bank</em></cite>
+      </div>
+    </section>
+
+    <!-- ── ABOUT THE AUTHOR ──────────────────────────── -->
+    <section class="author-section reveal">
+      <div class="author-label">About the Author</div>
+      <div class="author-grid">
+        <div class="author-image-col">
+          <div class="author-img-wrap">
+            <img src="https://www.emmanueldaniel.com/wp-content/uploads/2026/02/ED-bio.jpg"
+                 alt="Emmanuel Daniel"
+                 style="width:100%;height:100%;object-fit:cover;object-position:top center;"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="author-img-fallback" style="display:none;">
+              <span>ED</span>
+            </div>
+          </div>
+          <div class="author-name-block">
+            <div class="author-name-large">Emmanuel Daniel</div>
+            <div class="author-title-line">Author · Entrepreneur · Advisor</div>
+            <div class="author-social">
+              <a href="https://www.linkedin.com/in/emmanueldaniel" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+              <a href="https://twitter.com/EmmanuelDaniel" target="_blank" rel="noopener" aria-label="Twitter">𝕏</a>
+              <a href="https://www.facebook.com/emmanueldanielasianbanker" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+            </div>
+          </div>
+        </div>
+        <div class="author-content-col">
+          <p class="author-bio-text">
+            Emmanuel Daniel is a global thought leader on the future of finance, author, and founder of <em>TAB Global</em> — the research, publication and consulting house behind <em>The Asian Banker</em>, <em>Wealth and Society</em>, and <em>TAB Insights</em>. Named a top 10 global influencer in the <em>Fintech Power50</em> list for 2021 and 2022, he has spent three decades in intensive contact with banking and finance leaders across more than 110 countries.
+          </p>
+          <p class="author-bio-text">
+            Trained as a lawyer with degrees from the National University of Singapore and the University of London, Emmanuel brings rare intellectual range to the study of money, technology, and power. His first book, <em>The Great Transition</em> (2022), carried forewords from former US Congressman Barney Frank and Richard Sandor, widely regarded as the "father of financial futures." <em>Building the AI Bank</em> is his most urgent work yet — a reckoning with what speed, judgement, and artificial intelligence mean for the institutions that hold our financial lives.
+          </p>
+          <a href="https://www.emmanueldaniel.com/biography-contact/" target="_blank" rel="noopener" class="author-read-more">
+            Read more about the author <span class="arrow">→</span>
+          </a>
+        </div>
       </div>
     </section>
 
