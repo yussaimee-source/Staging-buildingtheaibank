@@ -2494,6 +2494,330 @@
 
       .masthead { padding: 1.2rem 0; }
     }
+
+    /* ─── ABOUT SUBPAGE ──────────────────────────────────────── */
+    .about-page { background: var(--paper); }
+
+    .about-page-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 2rem 6rem;
+    }
+
+    .about-page-header {
+      padding: 3rem 0 2rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .about-page-header-label {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 0.7rem;
+    }
+
+    .about-page-header-title {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 700;
+      line-height: 1.05;
+      color: var(--ink);
+      margin: 0 0 0.4rem;
+    }
+
+    .about-page-header-sub {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+      margin: 0;
+    }
+
+    .about-rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 3rem 0;
+    }
+
+    .about-hero {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 4.5rem;
+      align-items: start;
+      padding: 3rem 0 0;
+    }
+
+    .about-hero-photo-col { position: sticky; top: 5rem; }
+
+    .about-hero-photo-wrap {
+      width: 100%;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      background: var(--cream);
+      box-shadow: 6px 12px 36px rgba(0,0,0,0.12);
+      margin-bottom: 1.2rem;
+    }
+
+    .about-photo-fallback {
+      background: linear-gradient(160deg, #1a1510 0%, #3d2b1a 60%, #b5451b 100%);
+    }
+
+    .about-hero-photo {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+      display: block;
+    }
+
+    .about-social-links { display: flex; flex-direction: column; gap: 0; }
+
+    .about-social-link {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--warm-gray);
+      text-decoration: none;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--rule);
+      transition: color 0.2s;
+    }
+
+    .about-social-link:hover { color: var(--rust); }
+
+    .about-bio-lead {
+      font-family: var(--body-serif);
+      font-size: 1.18rem;
+      line-height: 1.75;
+      color: var(--ink);
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .about-bio-body {
+      font-family: var(--body-serif);
+      font-size: 1rem;
+      line-height: 1.85;
+      color: #3d3530;
+      margin-bottom: 1.1rem;
+    }
+
+    .about-bio-body a {
+      color: var(--rust);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(181,69,27,0.3);
+    }
+
+    .about-bio-body a:hover { border-bottom-color: var(--rust); }
+
+    .about-pull-quote {
+      margin: 2rem 0;
+      padding: 1.2rem 1.8rem;
+      border-left: 3px solid var(--gold);
+      background: var(--cream);
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--ink);
+    }
+
+    .about-credentials {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--rule);
+      margin-top: 2rem;
+    }
+
+    .about-credential {
+      padding: 1rem 0.8rem;
+      border-right: 1px solid var(--rule);
+      text-align: center;
+    }
+
+    .about-credential:last-child { border-right: none; }
+
+    .about-cred-num {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--rust);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .about-cred-label {
+      font-family: var(--sans);
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+    }
+
+    .about-section-label {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 1.8rem;
+    }
+
+    .about-books-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .about-book-card { display: flex; gap: 1.5rem; align-items: flex-start; }
+
+    .about-book-cover-wrap {
+      width: 100px;
+      flex-shrink: 0;
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      box-shadow: 4px 6px 20px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .about-book-cover-wrap--gt { background: #e8f0ea; }
+    .about-book-cover-img { width: 100%; height: auto; display: block; }
+
+    .about-book-badge {
+      font-family: var(--sans);
+      font-size: 0.56rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 0.5rem;
+    }
+
+    .about-book-title {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--ink);
+      margin-bottom: 0.6rem;
+    }
+
+    .about-book-desc {
+      font-family: var(--body-serif);
+      font-size: 0.85rem;
+      line-height: 1.65;
+      color: #5a4e44;
+      margin-bottom: 0.8rem;
+    }
+
+    .about-book-link {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--rust);
+      text-decoration: none;
+    }
+
+    .about-book-link:hover { opacity: 0.7; }
+
+    .about-tab-grid {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .about-tab-title {
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 1.2rem;
+    }
+
+    .about-tab-body {
+      font-family: var(--body-serif);
+      font-size: 0.97rem;
+      line-height: 1.8;
+      color: #3d3530;
+      margin-bottom: 1rem;
+    }
+
+    .about-tab-link {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--rust);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(181,69,27,0.35);
+      padding-bottom: 1px;
+      margin-top: 0.5rem;
+    }
+
+    .about-platform-list {
+      border: 1px solid var(--rule);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .about-platform-item {
+      display: flex;
+      flex-direction: column;
+      padding: 0.9rem 1.1rem;
+      border-bottom: 1px solid var(--rule);
+      text-decoration: none;
+      color: var(--ink);
+      transition: background 0.2s;
+    }
+
+    .about-platform-item:last-child { border-bottom: none; }
+    .about-platform-item:hover { background: var(--cream); }
+
+    .about-platform-name {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.15rem;
+    }
+
+    .about-platform-desc {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      color: var(--warm-gray);
+    }
+
+    @media (max-width: 960px) {
+      .about-hero { grid-template-columns: 220px 1fr; gap: 2.5rem; }
+      .about-hero-photo-col { position: static; }
+      .about-tab-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .about-books-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .about-credentials { grid-template-columns: repeat(2, 1fr); }
+      .about-credential:nth-child(2) { border-right: none; }
+      .about-credential:nth-child(3),
+      .about-credential:nth-child(4) { border-top: 1px solid var(--rule); }
+    }
+
+    @media (max-width: 620px) {
+      .about-hero { grid-template-columns: 1fr; }
+      .about-hero-photo-wrap { aspect-ratio: 4/3; max-height: 280px; }
+      .about-book-card { flex-direction: column; }
+      .about-book-cover-wrap { width: 80px; }
+    }
   </style>
 </head>
 <body>
@@ -2535,7 +2859,7 @@
       <a href="#" id="nav-books">Books</a>
       <a href="#">Newsletter</a>
       <a href="#" id="nav-speaking">Speaking</a>
-      <a href="#">About</a>
+      <a href="#" id="nav-about">About</a>
       <a href="#">Contact</a>
     </nav>
   </div>
@@ -2550,7 +2874,7 @@
     <a href="#" id="mob-nav-books">Books</a>
     <a href="#">Newsletter</a>
     <a href="#" id="mob-nav-speaking">Speaking</a>
-    <a href="#">Contact</a>
+    <a href="#" id="mob-nav-about">About</a>
   </nav>
   <div class="mobile-nav-sub">
     <a href="#" class="btn-subscribe">Become a Member</a>
@@ -3607,6 +3931,165 @@
   </div><!-- /speaking-page-inner -->
 </main><!-- /#speaking-page -->
 
+<!-- ─── ABOUT SUBPAGE ─────────────────────────────────────── -->
+<main id="about-page" class="about-page" style="display:none;">
+  <div class="about-page-inner">
+
+    <!-- Header -->
+    <div class="about-page-header reveal">
+      <div class="about-page-header-label">About</div>
+      <h1 class="about-page-header-title">Emmanuel Daniel</h1>
+      <p class="about-page-header-sub">Author · Entrepreneur · Advisor</p>
+    </div>
+
+    <div class="about-rule reveal"></div>
+
+    <!-- ── HERO SPLIT ──────────────────────────────────────── -->
+    <section class="about-hero reveal">
+
+      <!-- Photo column -->
+      <div class="about-hero-photo-col">
+        <div class="about-hero-photo-wrap">
+          <img
+            src="https://www.emmanueldaniel.com/wp-content/uploads/2026/02/ED-bio.jpg"
+            alt="Emmanuel Daniel"
+            class="about-hero-photo"
+            onerror="this.closest('.about-hero-photo-wrap').classList.add('about-photo-fallback'); this.style.display='none';"
+          />
+        </div>
+        <!-- Social links -->
+        <div class="about-social-links">
+          <a href="https://www.facebook.com/emmanueldanielasianbanker" target="_blank" rel="noopener" class="about-social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            Facebook
+          </a>
+          <a href="https://www.linkedin.com/in/emmanueldaniel" target="_blank" rel="noopener" class="about-social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://twitter.com/EmmanuelDaniel" target="_blank" rel="noopener" class="about-social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M4 4l16 16M4 20L20 4"/><path d="M4 4l5 5m11 11-5-5m-6 0-5 5m16-16-5 5"/><path d="M2 3h6.5L22 21h-6.5L2 3z"/></svg>
+            Twitter / X
+          </a>
+          <a href="mailto:edaniel@tab.global" class="about-social-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Email
+          </a>
+        </div>
+      </div>
+
+      <!-- Bio content column -->
+      <div class="about-bio-col">
+
+        <p class="about-bio-lead">Emmanuel Daniel is an author, entrepreneur and corporate strategist — a global thought leader in the future of finance and its impact on business and society.</p>
+
+        <p class="about-bio-body">He was listed as a top 10 global influencer in the <a href="https://thepower50.com/fintech/member/emmanuel-daniel/" target="_blank" rel="noopener">Fintech Power50</a> list for 2021 and 2022. Emmanuel founded the research, publication and consulting house, <a href="https://tab.global/" target="_blank" rel="noopener">TAB Global</a>, in 1996. Through its platforms — The Asian Banker, Wealth and Society, The Banking Academy and TAB Insights — he has had extensive contact with leaders in banking and finance around the world.</p>
+
+        <p class="about-bio-body">He has served, or is serving in advisory or consulting roles for various public and private sector institutions, and is a well-regarded mentor and confidante in leadership circles. He won the Citibank Excellence in Business Journalism for Asia in 1999 for his work on the internet in banking.</p>
+
+        <!-- Pull quote -->
+        <blockquote class="about-pull-quote">
+          "His writings are based on extensive travel to more than 110 countries. He posts regularly on his blog and writes on geopolitics, finance, culture, and the future of civilisation."
+        </blockquote>
+
+        <p class="about-bio-body">Emmanuel was trained as a lawyer, has degrees from the National University of Singapore and the University of London, and attended a course on economics at Columbia University in New York. He divides his time between Singapore, Beijing and New York.</p>
+
+        <!-- Credential pills -->
+        <div class="about-credentials">
+          <div class="about-credential">
+            <span class="about-cred-num">110+</span>
+            <span class="about-cred-label">Countries visited</span>
+          </div>
+          <div class="about-credential">
+            <span class="about-cred-num">25+</span>
+            <span class="about-cred-label">Years in finance media</span>
+          </div>
+          <div class="about-credential">
+            <span class="about-cred-num">2×</span>
+            <span class="about-cred-label">Fintech Power 50</span>
+          </div>
+          <div class="about-credential">
+            <span class="about-cred-num">2</span>
+            <span class="about-cred-label">Books published</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="about-rule reveal"></div>
+
+    <!-- ── BOOKS STRIP ─────────────────────────────────────── -->
+    <section class="about-books-strip reveal">
+      <div class="about-section-label">Books</div>
+      <div class="about-books-grid">
+
+        <div class="about-book-card">
+          <div class="about-book-cover-wrap">
+            <img id="about-cover-1" src="" alt="Building the AI Bank" class="about-book-cover-img" />
+          </div>
+          <div class="about-book-info">
+            <div class="about-book-badge">New Release · 2025</div>
+            <h3 class="about-book-title">Staging: Building the AI Bank</h3>
+            <p class="about-book-desc">How artificial intelligence is redesigning institutional banking from the inside — covering speed, judgment and the new architectures of financial power.</p>
+            <a href="#" id="about-goto-books" class="about-book-link">View book details →</a>
+          </div>
+        </div>
+
+        <div class="about-book-card">
+          <div class="about-book-cover-wrap about-book-cover-wrap--gt">
+            <img src="https://www.emmanueldaniel.com/wp-content/uploads/2022/07/main-banner-book.png" alt="The Great Transition" class="about-book-cover-img" />
+          </div>
+          <div class="about-book-info">
+            <div class="about-book-badge">Published 2022</div>
+            <h3 class="about-book-title">The Great Transition</h3>
+            <p class="about-book-desc">The personalisation of finance is here. Emmanuel charts how banking evolves from platform technology to hyper-personalised financial experience driven by crypto, blockchain and gaming.</p>
+            <a href="https://www.emmanueldaniel.com/the-great-transition/" target="_blank" rel="noopener" class="about-book-link">Learn more →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="about-rule reveal"></div>
+
+    <!-- ── TAB GLOBAL ──────────────────────────────────────── -->
+    <section class="about-tab-section reveal">
+      <div class="about-section-label">Organisation</div>
+      <div class="about-tab-grid">
+        <div class="about-tab-content">
+          <h2 class="about-tab-title">TAB Global</h2>
+          <p class="about-tab-body">Emmanuel founded TAB Global in 1996 as a research, publication and consulting house serving the global banking and finance industry. Through its network of platforms, TAB Global has fostered deep relationships with institutional leaders across more than 110 countries.</p>
+          <p class="about-tab-body">Its platforms include <strong>The Asian Banker</strong> — one of Asia's most respected financial intelligence publications — alongside Wealth and Society, The Banking Academy and TAB Insights, a dedicated research and advisory arm that provides confidential board-level briefings and strategy facilitation for institutional clients worldwide.</p>
+          <a href="https://tab.global/" target="_blank" rel="noopener" class="about-tab-link">Visit TAB Global →</a>
+        </div>
+        <div class="about-tab-platforms">
+          <div class="about-section-label" style="margin-bottom:1.2rem;">Platforms</div>
+          <div class="about-platform-list">
+            <a href="https://www.theasianbanker.com/" target="_blank" rel="noopener" class="about-platform-item">
+              <span class="about-platform-name">The Asian Banker</span>
+              <span class="about-platform-desc">Financial intelligence & research</span>
+            </a>
+            <a href="https://www.wealthandsociety.com/" target="_blank" rel="noopener" class="about-platform-item">
+              <span class="about-platform-name">Wealth and Society</span>
+              <span class="about-platform-desc">Wealth management perspectives</span>
+            </a>
+            <a href="http://www.thebankingacademy.com/" target="_blank" rel="noopener" class="about-platform-item">
+              <span class="about-platform-name">The Banking Academy</span>
+              <span class="about-platform-desc">Professional development</span>
+            </a>
+            <a href="http://www.tabinsights.com/" target="_blank" rel="noopener" class="about-platform-item">
+              <span class="about-platform-name">TAB Insights</span>
+              <span class="about-platform-desc">Advisory & strategy research</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /about-page-inner -->
+</main><!-- /#about-page -->
+
 <!-- ─── FOOTER ────────────────────────────────────────────── -->
 <footer class="site-footer">
   <div class="footer-inner">
@@ -3665,17 +4148,20 @@
   const blogPage     = document.getElementById('blog-page');
   const booksPage    = document.getElementById('books-page');
   const speakingPage = document.getElementById('speaking-page');
+  const aboutPage    = document.getElementById('about-page');
   const navHome      = document.getElementById('nav-home');
   const navBlog      = document.getElementById('nav-blog');
   const navBooks     = document.getElementById('nav-books');
   const navSpeaking  = document.getElementById('nav-speaking');
+  const navAbout     = document.getElementById('nav-about');
   const mobNavHome     = document.getElementById('mob-nav-home');
   const mobNavBlog     = document.getElementById('mob-nav-blog');
   const mobNavBooks    = document.getElementById('mob-nav-books');
   const mobNavSpeaking = document.getElementById('mob-nav-speaking');
+  const mobNavAbout    = document.getElementById('mob-nav-about');
 
-  const allPages = [homePage, blogPage, booksPage, speakingPage];
-  const allNavLinks = [navHome, navBlog, navBooks, navSpeaking];
+  const allPages = [homePage, blogPage, booksPage, speakingPage, aboutPage];
+  const allNavLinks = [navHome, navBlog, navBooks, navSpeaking, navAbout];
 
   function hideAll() {
     allPages.forEach(p => p && (p.style.display = 'none'));
@@ -3696,6 +4182,15 @@
   function showSpeaking() {
     hideAll(); speakingPage.style.display = ''; navSpeaking.classList.add('active'); window.scrollTo(0,0);
     document.querySelectorAll('#speaking-page .reveal').forEach(el => el.classList.add('visible'));
+  }
+
+  function showAbout() {
+    hideAll(); aboutPage.style.display = ''; navAbout && navAbout.classList.add('active'); window.scrollTo(0,0);
+    // Copy book cover src from homepage hero into about page
+    const heroImg = document.querySelector('.hero-image-wrap img');
+    const aboutCover = document.getElementById('about-cover-1');
+    if (heroImg && aboutCover && !aboutCover.src) aboutCover.src = heroImg.src;
+    document.querySelectorAll('#about-page .reveal').forEach(el => el.classList.add('visible'));
   }
 
   navHome.addEventListener('click',     e => { e.preventDefault(); showHome(); });
@@ -3776,6 +4271,13 @@
       if (e.key === 'Enter') newsletterBtn.click();
     });
   }
+
+  if (navAbout)     navAbout.addEventListener('click',    e => { e.preventDefault(); showAbout(); });
+  if (mobNavAbout)  mobNavAbout.addEventListener('click', e => { e.preventDefault(); showAbout(); mobileNav.classList.remove('open'); document.body.style.overflow = ''; });
+
+  // About page cross-links
+  const aboutGotoBooks = document.getElementById('about-goto-books');
+  if (aboutGotoBooks) aboutGotoBooks.addEventListener('click', e => { e.preventDefault(); showBooks(); });
 
   // ─── Active nav on scroll ───────────────────────────────────
   // Simple header hide on deep scroll, show on scroll up

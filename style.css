@@ -1,6 +1,6 @@
 /* ============================================================
    Staging: Building the AI Bank — style.css
-   Google Fonts required:
+   Google Fonts:
    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
    ============================================================ */
 
@@ -2488,4 +2488,328 @@ main:not(#blog-page):not(#books-page):not(#speaking-page) .reveal {
   }
 
   .masthead { padding: 1.2rem 0; }
+}
+
+/* ─── ABOUT SUBPAGE ──────────────────────────────────────── */
+.about-page { background: var(--paper); }
+
+.about-page-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2rem 6rem;
+}
+
+.about-page-header {
+  padding: 3rem 0 2rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.about-page-header-label {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 0.7rem;
+}
+
+.about-page-header-title {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--ink);
+  margin: 0 0 0.4rem;
+}
+
+.about-page-header-sub {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  margin: 0;
+}
+
+.about-rule {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 3rem 0;
+}
+
+.about-hero {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 4.5rem;
+  align-items: start;
+  padding: 3rem 0 0;
+}
+
+.about-hero-photo-col { position: sticky; top: 5rem; }
+
+.about-hero-photo-wrap {
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background: var(--cream);
+  box-shadow: 6px 12px 36px rgba(0,0,0,0.12);
+  margin-bottom: 1.2rem;
+}
+
+.about-photo-fallback {
+  background: linear-gradient(160deg, #1a1510 0%, #3d2b1a 60%, #b5451b 100%);
+}
+
+.about-hero-photo {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  display: block;
+}
+
+.about-social-links { display: flex; flex-direction: column; gap: 0; }
+
+.about-social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--warm-gray);
+  text-decoration: none;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--rule);
+  transition: color 0.2s;
+}
+
+.about-social-link:hover { color: var(--rust); }
+
+.about-bio-lead {
+  font-family: var(--body-serif);
+  font-size: 1.18rem;
+  line-height: 1.75;
+  color: var(--ink);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.about-bio-body {
+  font-family: var(--body-serif);
+  font-size: 1rem;
+  line-height: 1.85;
+  color: #3d3530;
+  margin-bottom: 1.1rem;
+}
+
+.about-bio-body a {
+  color: var(--rust);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(181,69,27,0.3);
+}
+
+.about-bio-body a:hover { border-bottom-color: var(--rust); }
+
+.about-pull-quote {
+  margin: 2rem 0;
+  padding: 1.2rem 1.8rem;
+  border-left: 3px solid var(--gold);
+  background: var(--cream);
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+.about-credentials {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--rule);
+  margin-top: 2rem;
+}
+
+.about-credential {
+  padding: 1rem 0.8rem;
+  border-right: 1px solid var(--rule);
+  text-align: center;
+}
+
+.about-credential:last-child { border-right: none; }
+
+.about-cred-num {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--rust);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.about-cred-label {
+  font-family: var(--sans);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+}
+
+.about-section-label {
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 1.8rem;
+}
+
+.about-books-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.about-book-card { display: flex; gap: 1.5rem; align-items: flex-start; }
+
+.about-book-cover-wrap {
+  width: 100px;
+  flex-shrink: 0;
+  background: var(--cream);
+  border: 1px solid var(--rule);
+  box-shadow: 4px 6px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.about-book-cover-wrap--gt { background: #e8f0ea; }
+.about-book-cover-img { width: 100%; height: auto; display: block; }
+
+.about-book-badge {
+  font-family: var(--sans);
+  font-size: 0.56rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 0.5rem;
+}
+
+.about-book-title {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+}
+
+.about-book-desc {
+  font-family: var(--body-serif);
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: #5a4e44;
+  margin-bottom: 0.8rem;
+}
+
+.about-book-link {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--rust);
+  text-decoration: none;
+}
+
+.about-book-link:hover { opacity: 0.7; }
+
+.about-tab-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-tab-title {
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 1.2rem;
+}
+
+.about-tab-body {
+  font-family: var(--body-serif);
+  font-size: 0.97rem;
+  line-height: 1.8;
+  color: #3d3530;
+  margin-bottom: 1rem;
+}
+
+.about-tab-link {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--rust);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(181,69,27,0.35);
+  padding-bottom: 1px;
+  margin-top: 0.5rem;
+}
+
+.about-platform-list {
+  border: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+}
+
+.about-platform-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0.9rem 1.1rem;
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+  color: var(--ink);
+  transition: background 0.2s;
+}
+
+.about-platform-item:last-child { border-bottom: none; }
+.about-platform-item:hover { background: var(--cream); }
+
+.about-platform-name {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.15rem;
+}
+
+.about-platform-desc {
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  color: var(--warm-gray);
+}
+
+@media (max-width: 960px) {
+  .about-hero { grid-template-columns: 220px 1fr; gap: 2.5rem; }
+  .about-hero-photo-col { position: static; }
+  .about-tab-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .about-books-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .about-credentials { grid-template-columns: repeat(2, 1fr); }
+  .about-credential:nth-child(2) { border-right: none; }
+  .about-credential:nth-child(3),
+  .about-credential:nth-child(4) { border-top: 1px solid var(--rule); }
+}
+
+@media (max-width: 620px) {
+  .about-hero { grid-template-columns: 1fr; }
+  .about-hero-photo-wrap { aspect-ratio: 4/3; max-height: 280px; }
+  .about-book-card { flex-direction: column; }
+  .about-book-cover-wrap { width: 80px; }
 }
