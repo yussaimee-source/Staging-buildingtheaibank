@@ -1,6 +1,6 @@
 /* ============================================================
    Staging: Building the AI Bank — style.css
-   Updated: Blog subpage + nav switching + all previous sections
+   Updated: Blog thumbnails + all previous sections
    Google Fonts:
    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
    ============================================================ */
@@ -1402,6 +1402,69 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   height: 1px;
   background: var(--rule);
 }
+
+/* Card thumbnails */
+.blog-card-thumb-link {
+  display: block;
+  text-decoration: none;
+  margin-bottom: 0.9rem;
+}
+
+.blog-card-thumb {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: var(--cream);
+  position: relative;
+}
+
+.blog-card-thumb--small {
+  height: 110px;
+}
+
+.blog-card-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.blog-card-thumb-link:hover .blog-card-thumb-img {
+  transform: scale(1.03);
+}
+
+/* Fallback coloured placeholders when image fails to load */
+.blog-card-thumb.thumb-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-card-thumb.thumb-fallback::after {
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.blog-card-thumb.thumb-geo       { background: linear-gradient(135deg, #1d3557 0%, #2c4a6e 100%); }
+.blog-card-thumb.thumb-geo::after { content: "Geopolitics"; color: #fff; }
+
+.blog-card-thumb.thumb-finance       { background: linear-gradient(135deg, #1a3a2a 0%, #2d5a40 100%); }
+.blog-card-thumb.thumb-finance::after { content: "Future of Finance"; color: #fff; }
+
+.blog-card-thumb.thumb-travel       { background: linear-gradient(135deg, #7c4a1e 0%, #b5631b 100%); }
+.blog-card-thumb.thumb-travel::after { content: "Travelers Tales"; color: #fff; }
+
+.blog-card-thumb.thumb-reviews       { background: linear-gradient(135deg, #3d1a4a 0%, #6b2f7a 100%); }
+.blog-card-thumb.thumb-reviews::after { content: "Reviews"; color: #fff; }
+
+.blog-card-thumb.thumb-footnotes       { background: linear-gradient(135deg, #2a2320 0%, #4a3830 100%); }
+.blog-card-thumb.thumb-footnotes::after { content: "Footnotes"; color: rgba(255,255,255,0.7); }
 
 /* Card grid — lead + stack */
 .blog-topic-grid {

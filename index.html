@@ -1407,6 +1407,69 @@
       background: var(--rule);
     }
 
+    /* Card thumbnails */
+    .blog-card-thumb-link {
+      display: block;
+      text-decoration: none;
+      margin-bottom: 0.9rem;
+    }
+
+    .blog-card-thumb {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      background: var(--cream);
+      position: relative;
+    }
+
+    .blog-card-thumb--small {
+      height: 110px;
+    }
+
+    .blog-card-thumb-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .blog-card-thumb-link:hover .blog-card-thumb-img {
+      transform: scale(1.03);
+    }
+
+    /* Fallback coloured placeholders when image fails to load */
+    .blog-card-thumb.thumb-fallback {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .blog-card-thumb.thumb-fallback::after {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+
+    .blog-card-thumb.thumb-geo       { background: linear-gradient(135deg, #1d3557 0%, #2c4a6e 100%); }
+    .blog-card-thumb.thumb-geo::after { content: "Geopolitics"; color: #fff; }
+
+    .blog-card-thumb.thumb-finance       { background: linear-gradient(135deg, #1a3a2a 0%, #2d5a40 100%); }
+    .blog-card-thumb.thumb-finance::after { content: "Future of Finance"; color: #fff; }
+
+    .blog-card-thumb.thumb-travel       { background: linear-gradient(135deg, #7c4a1e 0%, #b5631b 100%); }
+    .blog-card-thumb.thumb-travel::after { content: "Travelers Tales"; color: #fff; }
+
+    .blog-card-thumb.thumb-reviews       { background: linear-gradient(135deg, #3d1a4a 0%, #6b2f7a 100%); }
+    .blog-card-thumb.thumb-reviews::after { content: "Reviews"; color: #fff; }
+
+    .blog-card-thumb.thumb-footnotes       { background: linear-gradient(135deg, #2a2320 0%, #4a3830 100%); }
+    .blog-card-thumb.thumb-footnotes::after { content: "Footnotes"; color: rgba(255,255,255,0.7); }
+
     /* Card grid — lead + stack */
     .blog-topic-grid {
       display: grid;
@@ -2133,6 +2196,7 @@
       </div>
       <div class="blog-topic-grid">
         <article class="blog-card blog-card--lead">
+          <a href="https://www.emmanueldaniel.com/i-reject-all-forms-of-exceptionalism/" target="_blank" rel="noopener" class="blog-card-thumb-link"><div class="blog-card-thumb"><img src="https://www.emmanueldaniel.com/wp-content/uploads/2026/02/ChatGPT-Image-Feb-4-2026-05_56_00-PM.png" alt="I Reject All Forms of Exceptionalism" class="blog-card-thumb-img" onerror="this.style.display='none';this.parentElement.classList.add('thumb-fallback','thumb-geo')" loading="lazy"/></div></a>
           <div class="blog-card-meta"><span class="blog-card-cat">Geopolitics</span><span class="blog-card-date">4 Feb 2026</span></div>
           <h2 class="blog-card-title"><a href="https://www.emmanueldaniel.com/i-reject-all-forms-of-exceptionalism/" target="_blank" rel="noopener">I Reject All Forms of Exceptionalism</a></h2>
           <p class="blog-card-excerpt">Whether it is American exceptionalism, Chinese exceptionalism, or any nation's claim to a singular destiny — Emmanuel argues that exceptionalism is the first refuge of those unwilling to engage honestly with the world as it is. A pointed essay on identity, power and the myths nations tell themselves.</p>
@@ -2140,12 +2204,14 @@
         </article>
         <div class="blog-card-stack">
           <article class="blog-card blog-card--small">
+            <a href="https://www.emmanueldaniel.com/on-the-future-of-multilateralism-and-guessing-chinas-15th-five-year-plan/" target="_blank" rel="noopener" class="blog-card-thumb-link"><div class="blog-card-thumb blog-card-thumb--small"><img src="https://www.emmanueldaniel.com/wp-content/uploads/2025/10/ED-Award_Speech_Banner.jpg" alt="On the Future of Multilateralism" class="blog-card-thumb-img" onerror="this.style.display='none';this.parentElement.classList.add('thumb-fallback','thumb-geo')" loading="lazy"/></div></a>
             <div class="blog-card-meta"><span class="blog-card-cat">Geopolitics</span><span class="blog-card-date">13 Oct 2025</span></div>
             <h3 class="blog-card-title"><a href="https://www.emmanueldaniel.com/on-the-future-of-multilateralism-and-guessing-chinas-15th-five-year-plan/" target="_blank" rel="noopener">On the Future of Multilateralism, and Guessing China's 15th Five Year Plan</a></h3>
             <p class="blog-card-excerpt">With the multilateral order under strain, Emmanuel maps what China's forthcoming five-year plan might reveal about Beijing's intentions — and what the rest of the world should read between the lines.</p>
             <a href="https://www.emmanueldaniel.com/on-the-future-of-multilateralism-and-guessing-chinas-15th-five-year-plan/" target="_blank" rel="noopener" class="blog-card-readmore">Read →</a>
           </article>
           <article class="blog-card blog-card--small">
+            <a href="https://www.emmanueldaniel.com/deepseeks-open-source-breakthrough-from-inside-china/" target="_blank" rel="noopener" class="blog-card-thumb-link"><div class="blog-card-thumb blog-card-thumb--small"><img src="https://www.emmanueldaniel.com/wp-content/uploads/2025/02/DeepSeek-breakthrough.png" alt="DeepSeek Open Source" class="blog-card-thumb-img" onerror="this.style.display='none';this.parentElement.classList.add('thumb-fallback','thumb-geo')" loading="lazy"/></div></a>
             <div class="blog-card-meta"><span class="blog-card-cat">Geopolitics</span><span class="blog-card-date">11 Feb 2025</span></div>
             <h3 class="blog-card-title"><a href="https://www.emmanueldaniel.com/deepseeks-open-source-breakthrough-from-inside-china/" target="_blank" rel="noopener">DeepSeek's "Open Source" Breakthrough from Inside China</a></h3>
             <p class="blog-card-excerpt">DeepSeek and Alibaba's QN 2.5 have surpassed leading Western AI models, shifting the AI landscape in ways few anticipated. This is not just a technology story — it is a geopolitical one about where intelligence is being built and who controls it.</p>
@@ -2165,6 +2231,7 @@
       </div>
       <div class="blog-topic-grid">
         <article class="blog-card blog-card--lead">
+          <a href="https://www.emmanueldaniel.com/2025-was-when-the-financial-markets-hijacked-the-networked-economy/" target="_blank" rel="noopener" class="blog-card-thumb-link"><div class="blog-card-thumb"><img src="https://www.emmanueldaniel.com/wp-content/uploads/2025/12/image-3.png" alt="2025 Financial Markets" class="blog-card-thumb-img" onerror="this.style.display='none';this.parentElement.classList.add('thumb-fallback','thumb-finance')" loading="lazy"/></div></a>
           <div class="blog-card-meta"><span class="blog-card-cat">Future of Finance</span><span class="blog-card-date">26 Dec 2025</span></div>
           <h2 class="blog-card-title"><a href="https://www.emmanueldaniel.com/2025-was-when-the-financial-markets-hijacked-the-networked-economy/" target="_blank" rel="noopener">2025 Was When the Financial Markets Hijacked the Networked Economy</a></h2>
           <p class="blog-card-excerpt">When Emmanuel first wrote <em>The Great Transition</em>, the argument was that finance would be personalised. Instead, 2025 revealed a different trajectory: financial markets reaching into the networked economy and reclaiming it. A candid reassessment of the forces at play.</p>
@@ -2172,12 +2239,14 @@
         </article>
         <div class="blog-card-stack">
           <article class="blog-card blog-card--small">
+            <a href="https://www.emmanueldaniel.com/how-the-network-economy-is-changing-banking-and-finance-standfirst/" target="_blank" rel="noopener" class="blog-card-thumb-link"><div class="blog-card-thumb blog-card-thumb--small"><img src="https://www.emmanueldaniel.com/wp-content/uploads/2025/10/network-economy.jpg" alt="Network Economy Finance" class="blog-card-thumb-img" onerror="this.style.display='none';this.parentElement.classList.add('thumb-fallback','thumb-finance')" loading="lazy"/></div></a>
             <div class="blog-card-meta"><span class="blog-card-cat">Future of Finance</span><span class="blog-card-date">30 Oct 2025</span></div>
             <h3 class="blog-card-title"><a href="https://www.emmanueldaniel.com/how-the-network-economy-is-changing-banking-and-finance-standfirst/" target="_blank" rel="noopener">The Network Economy Will Put a Price on Everything We Do</a></h3>
             <p class="blog-card-excerpt">As the network economy deepens, Emmanuel explores how value is being assigned to behaviours, identities and interactions that were once beyond the reach of markets — and what that means for institutions, individuals and regulators.</p>
             <a href="https://www.emmanueldaniel.com/how-the-network-economy-is-changing-banking-and-finance-standfirst/" target="_blank" rel="noopener" class="blog-card-readmore">Read →</a>
           </article>
           <article class="blog-card blog-card--small">
+            <a href="https://www.emmanueldaniel.com/who-better-to-ask-if-the-u-s-will-move-from-physical-to-digital-dollars/" target="_blank" rel="noopener" class="blog-card-thumb-link"><div class="blog-card-thumb blog-card-thumb--small"><img src="https://www.emmanueldaniel.com/wp-content/uploads/2025/05/digital-dollars.jpg" alt="Digital Dollars" class="blog-card-thumb-img" onerror="this.style.display='none';this.parentElement.classList.add('thumb-fallback','thumb-finance')" loading="lazy"/></div></a>
             <div class="blog-card-meta"><span class="blog-card-cat">Future of Finance</span><span class="blog-card-date">26 May 2025</span></div>
             <h3 class="blog-card-title"><a href="https://www.emmanueldaniel.com/who-better-to-ask-if-the-u-s-will-move-from-physical-to-digital-dollars/" target="_blank" rel="noopener">Who Better to Ask if the U.S. Will Move from Physical to Digital Dollars?</a></h3>
             <p class="blog-card-excerpt">The debate over a US digital dollar is no longer theoretical. Emmanuel examines who the real decision-makers are, what the transition would mean for dollar dominance, and why the question matters far beyond American borders.</p>
@@ -2197,6 +2266,7 @@
       </div>
       <div class="blog-topic-grid">
         <article class="blog-card blog-card--lead">
+          <a href="https://www.emmanueldaniel.com/on-the-worlds-longest-train-through-the-sahara/" target="_blank" rel="noopener" class="blog-card-thumb-link"><div class="blog-card-thumb"><img src="https://www.emmanueldaniel.com/wp-content/uploads/2024/08/sahara-train.jpg" alt="Worlds Longest Train Sahara" class="blog-card-thumb-img" onerror="this.style.display='none';this.parentElement.classList.add('thumb-fallback','thumb-travel')" loading="lazy"/></div></a>
           <div class="blog-card-meta"><span class="blog-card-cat">Travelers Tales</span><span class="blog-card-date">22 Aug 2024</span></div>
           <h2 class="blog-card-title"><a href="https://www.emmanueldaniel.com/on-the-worlds-longest-train-through-the-sahara/" target="_blank" rel="noopener">On the World's Longest Train Through the Sahara</a></h2>
           <p class="blog-card-excerpt">A first-person account of boarding the iron ore train that traverses the Sahara from Zouerate to Nouadhibou in Mauritania — one of the longest and most extraordinary rail journeys on earth. Part travelogue, part meditation on infrastructure, remoteness and human endurance.</p>
@@ -2204,12 +2274,14 @@
         </article>
         <div class="blog-card-stack">
           <article class="blog-card blog-card--small">
+            <a href="https://www.emmanueldaniel.com/a-memorable-conversation-in-st-lucia-on-talent-in-the-caribbean/" target="_blank" rel="noopener" class="blog-card-thumb-link"><div class="blog-card-thumb blog-card-thumb--small"><img src="https://www.emmanueldaniel.com/wp-content/uploads/2024/12/st-lucia.jpg" alt="St Lucia Caribbean Talent" class="blog-card-thumb-img" onerror="this.style.display='none';this.parentElement.classList.add('thumb-fallback','thumb-travel')" loading="lazy"/></div></a>
             <div class="blog-card-meta"><span class="blog-card-cat">Travelers Tales</span><span class="blog-card-date">16 Dec 2024</span></div>
             <h3 class="blog-card-title"><a href="https://www.emmanueldaniel.com/a-memorable-conversation-in-st-lucia-on-talent-in-the-caribbean/" target="_blank" rel="noopener">A Conversation in St Lucia on the People and Talent in the Caribbean</a></h3>
             <p class="blog-card-excerpt">A candid exchange in Saint Lucia on what it takes to build talent ecosystems in small island economies — and why the Caribbean's human capital is both its greatest asset and most underleveraged resource.</p>
             <a href="https://www.emmanueldaniel.com/a-memorable-conversation-in-st-lucia-on-talent-in-the-caribbean/" target="_blank" rel="noopener" class="blog-card-readmore">Read →</a>
           </article>
           <article class="blog-card blog-card--small">
+            <a href="https://www.emmanueldaniel.com/even-destitute-countries-need-advanced-nursing-skills/" target="_blank" rel="noopener" class="blog-card-thumb-link"><div class="blog-card-thumb blog-card-thumb--small"><img src="https://www.emmanueldaniel.com/wp-content/uploads/2025/07/nursing-destitute.jpg" alt="Nursing Skills" class="blog-card-thumb-img" onerror="this.style.display='none';this.parentElement.classList.add('thumb-fallback','thumb-travel')" loading="lazy"/></div></a>
             <div class="blog-card-meta"><span class="blog-card-cat">Travelers Tales</span><span class="blog-card-date">16 Jul 2025</span></div>
             <h3 class="blog-card-title"><a href="https://www.emmanueldaniel.com/even-destitute-countries-need-advanced-nursing-skills/" target="_blank" rel="noopener">Even Destitute Countries Need Advanced Nursing Skills</a></h3>
             <p class="blog-card-excerpt">Following academics into some of the world's most resource-constrained health systems, this dispatch asks: what does genuine professional development look like when the infrastructure barely exists?</p>
@@ -2229,6 +2301,7 @@
       </div>
       <div class="blog-topic-grid">
         <article class="blog-card blog-card--lead">
+          <a href="https://www.emmanueldaniel.com/crazy-rich-asians/" target="_blank" rel="noopener" class="blog-card-thumb-link"><div class="blog-card-thumb"><img src="https://www.emmanueldaniel.com/wp-content/uploads/2018/08/crazy-rich-asians.jpg" alt="Crazy Rich Asians" class="blog-card-thumb-img" onerror="this.style.display='none';this.parentElement.classList.add('thumb-fallback','thumb-reviews')" loading="lazy"/></div></a>
           <div class="blog-card-meta"><span class="blog-card-cat">Reviews</span><span class="blog-card-date">29 Aug 2018</span></div>
           <h2 class="blog-card-title"><a href="https://www.emmanueldaniel.com/crazy-rich-asians/" target="_blank" rel="noopener">Crazy Rich Asians</a></h2>
           <p class="blog-card-excerpt">More than a pop-culture phenomenon, <em>Crazy Rich Asians</em> surfaces real tensions around new money, old hierarchies and the Asian diaspora's complicated relationship with wealth, status and identity. Emmanuel reads it not as escapism but as social document.</p>
@@ -2236,12 +2309,14 @@
         </article>
         <div class="blog-card-stack">
           <article class="blog-card blog-card--small">
+            <a href="https://www.emmanueldaniel.com/the-movie-avatar-and-the-changing-face-of-the-messiah/" target="_blank" rel="noopener" class="blog-card-thumb-link"><div class="blog-card-thumb blog-card-thumb--small"><img src="https://www.emmanueldaniel.com/wp-content/uploads/2010/02/avatar-messiah.jpg" alt="Avatar Movie Review" class="blog-card-thumb-img" onerror="this.style.display='none';this.parentElement.classList.add('thumb-fallback','thumb-reviews')" loading="lazy"/></div></a>
             <div class="blog-card-meta"><span class="blog-card-cat">Reviews</span><span class="blog-card-date">1 Feb 2010</span></div>
             <h3 class="blog-card-title"><a href="https://www.emmanueldaniel.com/the-movie-avatar-and-the-changing-face-of-the-messiah/" target="_blank" rel="noopener">The Movie Avatar and the Changing Face of the Messiah</a></h3>
             <p class="blog-card-excerpt">Avatar's planetary mythology prompted Emmanuel to explore a deeper question: how the archetype of the saviour is being remade for the 21st century, and what that reveals about collective anxieties around power, nature and redemption.</p>
             <a href="https://www.emmanueldaniel.com/the-movie-avatar-and-the-changing-face-of-the-messiah/" target="_blank" rel="noopener" class="blog-card-readmore">Read →</a>
           </article>
           <article class="blog-card blog-card--small">
+            <a href="https://www.emmanueldaniel.com/the-king-never-smiles-paul-m-handley/" target="_blank" rel="noopener" class="blog-card-thumb-link"><div class="blog-card-thumb blog-card-thumb--small"><img src="https://www.emmanueldaniel.com/wp-content/uploads/2007/08/king-never-smiles.jpg" alt="The King Never Smiles" class="blog-card-thumb-img" onerror="this.style.display='none';this.parentElement.classList.add('thumb-fallback','thumb-reviews')" loading="lazy"/></div></a>
             <div class="blog-card-meta"><span class="blog-card-cat">Reviews</span><span class="blog-card-date">6 Aug 2007</span></div>
             <h3 class="blog-card-title"><a href="https://www.emmanueldaniel.com/the-king-never-smiles-paul-m-handley/" target="_blank" rel="noopener">The King Never Smiles — Paul M. Handley</a></h3>
             <p class="blog-card-excerpt">A banned biography of Thailand's King Bhumibol Adulyadej, Handley's book peels back the mythology around the monarchy and asks uncomfortable questions about royal power, political interference and national narrative-building in Southeast Asia.</p>
@@ -2261,6 +2336,7 @@
       </div>
       <div class="blog-topic-grid">
         <article class="blog-card blog-card--lead">
+          <a href="https://www.emmanueldaniel.com/creating-a-digital-finance-roadmap/" target="_blank" rel="noopener" class="blog-card-thumb-link"><div class="blog-card-thumb"><img src="https://www.emmanueldaniel.com/wp-content/uploads/2021/10/digital-finance-roadmap.jpg" alt="Digital Finance Roadmap" class="blog-card-thumb-img" onerror="this.style.display='none';this.parentElement.classList.add('thumb-fallback','thumb-footnotes')" loading="lazy"/></div></a>
           <div class="blog-card-meta"><span class="blog-card-cat">Footnotes</span><span class="blog-card-date">27 Oct 2021</span></div>
           <h2 class="blog-card-title"><a href="https://www.emmanueldaniel.com/creating-a-digital-finance-roadmap/" target="_blank" rel="noopener">Creating a Digital Finance Roadmap</a></h2>
           <p class="blog-card-excerpt">An early marker in Emmanuel's thinking: what would a genuine roadmap for digital finance look like — not a technology checklist, but a framework that accounts for institutions, societies and the uneven pace of change across geographies? A foundational note for what became a decade of argument.</p>
@@ -2268,12 +2344,14 @@
         </article>
         <div class="blog-card-stack">
           <article class="blog-card blog-card--small">
+            <a href="https://www.emmanueldaniel.com/russian-ukraine-war-will-trigger-transformational-changes-in-finance-industry/" target="_blank" rel="noopener" class="blog-card-thumb-link"><div class="blog-card-thumb blog-card-thumb--small"><img src="https://www.emmanueldaniel.com/wp-content/uploads/2022/04/russia-ukraine.jpg" alt="Russia Ukraine War Finance" class="blog-card-thumb-img" onerror="this.style.display='none';this.parentElement.classList.add('thumb-fallback','thumb-footnotes')" loading="lazy"/></div></a>
             <div class="blog-card-meta"><span class="blog-card-cat">Footnotes</span><span class="blog-card-date">14 Apr 2022</span></div>
             <h3 class="blog-card-title"><a href="https://www.emmanueldaniel.com/russian-ukraine-war-will-trigger-transformational-changes-in-finance-industry/" target="_blank" rel="noopener">"Russian-Ukraine War Will Trigger Transformational Changes in Finance Industry"</a></h3>
             <p class="blog-card-excerpt">Written at the outbreak of the conflict, this note argues that the financial consequences of the Russia-Ukraine war will outlast the headlines — reshaping sanctions architecture, reserve currency assumptions and the pace of dedollarisation debates.</p>
             <a href="https://www.emmanueldaniel.com/russian-ukraine-war-will-trigger-transformational-changes-in-finance-industry/" target="_blank" rel="noopener" class="blog-card-readmore">Read →</a>
           </article>
           <article class="blog-card blog-card--small">
+            <a href="https://www.emmanueldaniel.com/an-introduction-my-first-post/" target="_blank" rel="noopener" class="blog-card-thumb-link"><div class="blog-card-thumb blog-card-thumb--small"><img src="https://www.emmanueldaniel.com/wp-content/uploads/2006/02/introduction.jpg" alt="Introduction First Post" class="blog-card-thumb-img" onerror="this.style.display='none';this.parentElement.classList.add('thumb-fallback','thumb-footnotes')" loading="lazy"/></div></a>
             <div class="blog-card-meta"><span class="blog-card-cat">Footnotes</span><span class="blog-card-date">24 Feb 2006</span></div>
             <h3 class="blog-card-title"><a href="https://www.emmanueldaniel.com/an-introduction-my-first-post/" target="_blank" rel="noopener">An Introduction — My First Post</a></h3>
             <p class="blog-card-excerpt">Where it all began. Emmanuel's inaugural blog entry from 2006 sets out a simple intention: to write honestly about the world of finance, politics and travel from the vantage point of someone who has spent a lifetime moving between continents and institutions.</p>
