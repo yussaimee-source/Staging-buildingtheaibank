@@ -1317,6 +1317,395 @@
       }
     }
 
+    /* ─── SPEAKING SUBPAGE ───────────────────────────────────── */
+    .speaking-page {
+      background: var(--paper);
+    }
+
+    .speaking-page-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 2rem 6rem;
+    }
+
+    /* Header */
+    .speaking-header {
+      padding: 3rem 0 2.5rem;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 3.5rem;
+    }
+
+    .speaking-header-label {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 0.9rem;
+    }
+
+    .speaking-header-title {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.15;
+      max-width: 760px;
+    }
+
+    /* Hero split */
+    .speaking-hero {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 4rem;
+      align-items: start;
+      margin-bottom: 3.5rem;
+    }
+
+    .speaking-hero-photo-wrap {
+      width: 100%;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      background: var(--cream);
+      box-shadow: 6px 10px 32px rgba(0,0,0,0.1);
+    }
+
+    .speaking-hero-photo-wrap.speaking-photo-fallback {
+      background: linear-gradient(160deg, #1a1510 0%, #3d2b1a 100%);
+    }
+
+    .speaking-hero-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .speaking-hero-lead {
+      font-family: var(--body-serif);
+      font-size: 1.1rem;
+      line-height: 1.75;
+      color: var(--ink);
+      margin-bottom: 1.1rem;
+      font-style: italic;
+    }
+
+    .speaking-hero-lead a {
+      color: var(--rust);
+      text-decoration: none;
+    }
+
+    .speaking-hero-body {
+      font-family: var(--body-serif);
+      font-size: 0.96rem;
+      line-height: 1.8;
+      color: #3d3530;
+      margin-bottom: 1rem;
+    }
+
+    /* Credentials bar */
+    .speaking-credentials {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid var(--rule);
+      margin-top: 2rem;
+    }
+
+    .speaking-credential-item {
+      padding: 1.2rem 1rem;
+      border-right: 1px solid var(--rule);
+      text-align: center;
+    }
+
+    .speaking-credential-item:last-child {
+      border-right: none;
+    }
+
+    .speaking-cred-number {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--rust);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+
+    .speaking-cred-label {
+      font-family: var(--sans);
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--warm-gray);
+      text-transform: uppercase;
+      line-height: 1.4;
+    }
+
+    /* Section divider */
+    .speaking-rule {
+      height: 1px;
+      background: var(--rule);
+      margin: 3rem 0;
+    }
+
+    /* Section labels */
+    .speaking-section-label {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink);
+      padding-bottom: 0.65rem;
+      border-bottom: 2px solid var(--ink);
+      margin-bottom: 1.4rem;
+    }
+
+    .speaking-section-intro {
+      font-family: var(--body-serif);
+      font-size: 0.98rem;
+      line-height: 1.75;
+      color: #5a4f46;
+      max-width: 680px;
+      margin-bottom: 2rem;
+    }
+
+    /* Topics grid */
+    .speaking-topics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--rule);
+    }
+
+    .speaking-topic-card {
+      padding: 1.8rem 1.6rem;
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      transition: background 0.2s;
+    }
+
+    .speaking-topic-card:hover {
+      background: var(--cream);
+    }
+
+    .speaking-topic-card:nth-child(3n) {
+      border-right: none;
+    }
+
+    .speaking-topic-card:nth-child(4),
+    .speaking-topic-card:nth-child(5),
+    .speaking-topic-card:nth-child(6) {
+      border-bottom: none;
+    }
+
+    .speaking-topic-icon {
+      color: var(--rust);
+      font-size: 1.4rem;
+      line-height: 1;
+      margin-bottom: 0.8rem;
+    }
+
+    .speaking-topic-title {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.65rem;
+      line-height: 1.25;
+    }
+
+    .speaking-topic-body {
+      font-family: var(--body-serif);
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: #4a4039;
+    }
+
+    /* Engagements list */
+    .speaking-engagements-list {
+      border-top: 1px solid var(--rule);
+      margin-bottom: 1.5rem;
+    }
+
+    .speaking-engagement-row {
+      display: grid;
+      grid-template-columns: 80px 1fr 24px;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--rule);
+      text-decoration: none;
+      color: var(--ink);
+      transition: background 0.15s;
+    }
+
+    .speaking-engagement-row:hover {
+      background: var(--cream);
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      margin: 0 -0.5rem;
+    }
+
+    .speaking-engagement-date {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+      white-space: nowrap;
+    }
+
+    .speaking-engagement-title {
+      font-family: var(--serif);
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.3;
+      margin-bottom: 0.2rem;
+    }
+
+    .speaking-engagement-venue {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      color: var(--warm-gray);
+      letter-spacing: 0.04em;
+    }
+
+    .speaking-engagement-arrow {
+      font-family: var(--sans);
+      font-size: 1rem;
+      color: var(--rust);
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+
+    .speaking-engagement-row:hover .speaking-engagement-arrow {
+      opacity: 1;
+    }
+
+    .speaking-all-link {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--rust);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .speaking-all-link:hover { opacity: 0.65; }
+
+    /* Enquiry CTA */
+    .speaking-cta {
+      background: var(--ink);
+      padding: 3.5rem;
+      color: var(--paper);
+    }
+
+    .speaking-cta-label {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+
+    .speaking-cta-title {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+
+    .speaking-cta-body {
+      font-family: var(--body-serif);
+      font-size: 0.96rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.75);
+      max-width: 640px;
+      margin-bottom: 0.8rem;
+    }
+
+    .speaking-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .speaking-contact-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      padding: 1rem 1.4rem;
+      border: 1px solid rgba(255,255,255,0.15);
+      text-decoration: none;
+      min-width: 180px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .speaking-contact-item:hover {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.08);
+    }
+
+    .speaking-contact-name {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .speaking-contact-email {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .speaking-hero {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .speaking-hero-photo-col {
+        max-width: 260px;
+      }
+      .speaking-credentials {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .speaking-credential-item:nth-child(2) { border-right: none; }
+      .speaking-credential-item:nth-child(3) { border-top: 1px solid var(--rule); }
+      .speaking-topics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .speaking-topic-card:nth-child(3n) { border-right: 1px solid var(--rule); }
+      .speaking-topic-card:nth-child(2n) { border-right: none; }
+      .speaking-topic-card:nth-child(5),
+      .speaking-topic-card:nth-child(6) { border-bottom: none; }
+      .speaking-topic-card:nth-child(4) { border-bottom: 1px solid var(--rule); }
+      .speaking-cta { padding: 2.5rem 1.5rem; }
+    }
+
+    @media (max-width: 600px) {
+      .speaking-topics-grid { grid-template-columns: 1fr; }
+      .speaking-topic-card { border-right: none !important; }
+      .speaking-topic-card:last-child { border-bottom: none; }
+      .speaking-credentials { grid-template-columns: repeat(2, 1fr); }
+      .speaking-page-inner { padding: 2rem 1rem 4rem; }
+      .speaking-engagement-row { grid-template-columns: 60px 1fr 20px; gap: 0.8rem; }
+    }
+
     /* ─── BOOKS SUBPAGE ──────────────────────────────────────── */
     .books-page {
       background: var(--paper);
@@ -2067,7 +2456,7 @@
       <a href="#" id="nav-blog">Blog</a>
       <a href="#" id="nav-books">Books</a>
       <a href="#">Newsletter</a>
-      <a href="#">Speaking</a>
+      <a href="#" id="nav-speaking">Speaking</a>
       <a href="#">About</a>
       <a href="#">Contact</a>
     </nav>
@@ -2082,8 +2471,7 @@
     <a href="#" id="mob-nav-blog">Blog</a>
     <a href="#" id="mob-nav-books">Books</a>
     <a href="#">Newsletter</a>
-    <a href="#">Speaking</a>
-    <a href="#">About</a>
+    <a href="#" id="mob-nav-speaking">Speaking</a>
     <a href="#">Contact</a>
   </nav>
   <div class="mobile-nav-sub">
@@ -2881,6 +3269,221 @@
   </div><!-- /books-page-inner -->
 </main><!-- /#books-page -->
 
+<!-- ─── SPEAKING SUBPAGE ─────────────────────────────────────── -->
+<main id="speaking-page" class="speaking-page" style="display:none;">
+  <div class="speaking-page-inner">
+
+    <!-- ── PAGE HEADER ──────────────────────────────────────── -->
+    <div class="speaking-header reveal">
+      <div class="speaking-header-label">Speaking &amp; Engagements</div>
+      <h1 class="speaking-header-title">Bringing Clarity to the Most Complex Conversations in Finance</h1>
+    </div>
+
+    <!-- ── HERO SPLIT: PHOTO + INTRO ────────────────────────── -->
+    <div class="speaking-hero reveal">
+      <div class="speaking-hero-photo-col">
+        <div class="speaking-hero-photo-wrap">
+          <img
+            src="https://www.emmanueldaniel.com/wp-content/uploads/2024/02/EDBlog-speaker-05-1-1.png"
+            alt="Emmanuel Daniel — Speaker"
+            class="speaking-hero-photo"
+            onerror="this.style.display='none';this.parentElement.classList.add('speaking-photo-fallback')"
+          />
+        </div>
+      </div>
+      <div class="speaking-hero-content">
+        <p class="speaking-hero-lead">Emmanuel Daniel is a well-regarded global speaker on transformational issues, especially in finance and society. His presentations are always client-specific. He also gives confidential board-level briefings and facilitates in-house strategy sessions for institutional clients, drawing from his researchers at <a href="https://tabinsights.com/" target="_blank" rel="noopener">TAB Insights</a>.</p>
+        <p class="speaking-hero-body">Emmanuel founded TAB Global in 1996 and has had extensive contact with leaders in banking and finance around the world through its platforms — The Asian Banker, Wealth and Society, The Banking Academy and TAB Insights. He has served in advisory or consulting roles for various public and private sector institutions and is a well-regarded mentor and confidante in leadership circles.</p>
+        <p class="speaking-hero-body">He is a global thought leader in the future of finance and its impact on business and society, listed as a top 10 global influencer in the Fintech Power 50 for 2021 and 2022. He travels widely and divides his time between Singapore, Beijing and New York, drawing on direct experience across more than 110 countries.</p>
+        <div class="speaking-credentials">
+          <div class="speaking-credential-item">
+            <div class="speaking-cred-number">110+</div>
+            <div class="speaking-cred-label">Countries visited</div>
+          </div>
+          <div class="speaking-credential-item">
+            <div class="speaking-cred-number">25+</div>
+            <div class="speaking-cred-label">Years in financial media &amp; research</div>
+          </div>
+          <div class="speaking-credential-item">
+            <div class="speaking-cred-number">2×</div>
+            <div class="speaking-cred-label">Fintech Power 50 top influencer</div>
+          </div>
+          <div class="speaking-credential-item">
+            <div class="speaking-cred-number">2</div>
+            <div class="speaking-cred-label">Published books on the future of finance</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="speaking-rule reveal"></div>
+
+    <!-- ── SPEAKING TOPICS ───────────────────────────────────── -->
+    <section class="speaking-topics reveal">
+      <div class="speaking-section-label">Speaking Topics</div>
+      <p class="speaking-section-intro">Emmanuel speaks from lived experience — not theory. Every engagement draws on decades of frontline access to the leaders, institutions and disruptions shaping global finance.</p>
+      <div class="speaking-topics-grid">
+
+        <div class="speaking-topic-card">
+          <div class="speaking-topic-icon">&#9616;</div>
+          <h3 class="speaking-topic-title">The AI Bank</h3>
+          <p class="speaking-topic-body">What it actually means to rebuild a financial institution around artificial intelligence — not as a feature, but as the operating logic of the entire enterprise. For boards, leadership teams and regulators navigating the transition.</p>
+        </div>
+
+        <div class="speaking-topic-card">
+          <div class="speaking-topic-icon">&#9616;</div>
+          <h3 class="speaking-topic-title">The Great Transition</h3>
+          <p class="speaking-topic-body">From platform banking to radical personalisation — the forces of crypto, DeFi, blockchain and identity technology that are redistributing power from institutions to individuals. A framework for understanding where finance is heading.</p>
+        </div>
+
+        <div class="speaking-topic-card">
+          <div class="speaking-topic-icon">&#9616;</div>
+          <h3 class="speaking-topic-title">Geopolitics &amp; Finance</h3>
+          <p class="speaking-topic-body">How sanctions, dedollarisation, trade fragmentation and the rise of China are redrawing the map of global capital flows. Emmanuel brings firsthand insight from across Asia, the Middle East, Africa and the Americas.</p>
+        </div>
+
+        <div class="speaking-topic-card">
+          <div class="speaking-topic-icon">&#9616;</div>
+          <h3 class="speaking-topic-title">Innovation &amp; Disruption in Banking</h3>
+          <p class="speaking-topic-body">Why most fintech projects fail inside banks, why blockchain pilots never scale, and what it actually takes to build a culture of genuine institutional change. Grounded in 25 years of watching banks succeed and fail.</p>
+        </div>
+
+        <div class="speaking-topic-card">
+          <div class="speaking-topic-icon">&#9616;</div>
+          <h3 class="speaking-topic-title">The Future of Financial Centres</h3>
+          <p class="speaking-topic-body">What separates the financial centres that will matter in 2040 from those that will not — from Singapore and Hong Kong to Dubai, London and New York. A keynote built for regulators, policy-makers and city strategists.</p>
+        </div>
+
+        <div class="speaking-topic-card">
+          <div class="speaking-topic-icon">&#9616;</div>
+          <h3 class="speaking-topic-title">Leadership in Uncertain Times</h3>
+          <p class="speaking-topic-body">On the kind of leadership that transitions actually demand — intellectual honesty, institutional courage and the willingness to redesign rather than defend. A confidential briefing format for senior executive and board audiences.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="speaking-rule reveal"></div>
+
+    <!-- ── RECENT SPEAKING ENGAGEMENTS ──────────────────────── -->
+    <section class="speaking-engagements reveal">
+      <div class="speaking-section-label">Recent Engagements</div>
+      <div class="speaking-engagements-list">
+
+        <a href="https://www.emmanueldaniel.com/the-future-wont-ask-permission/" target="_blank" rel="noopener" class="speaking-engagement-row">
+          <div class="speaking-engagement-date">Jun 2025</div>
+          <div class="speaking-engagement-body">
+            <div class="speaking-engagement-title">How Innovation Hubs Get Created</div>
+            <div class="speaking-engagement-venue">Keynote Presentation</div>
+          </div>
+          <div class="speaking-engagement-arrow">→</div>
+        </a>
+
+        <a href="https://www.emmanueldaniel.com/trust-the-data-take-the-leap/" target="_blank" rel="noopener" class="speaking-engagement-row">
+          <div class="speaking-engagement-date">May 2025</div>
+          <div class="speaking-engagement-body">
+            <div class="speaking-engagement-title">Trust the Data, Take the Leap!</div>
+            <div class="speaking-engagement-venue">Speech &amp; Presentation</div>
+          </div>
+          <div class="speaking-engagement-arrow">→</div>
+        </a>
+
+        <a href="https://www.emmanueldaniel.com/ai-and-immortality-in-the-year-of-the-snake/" target="_blank" rel="noopener" class="speaking-engagement-row">
+          <div class="speaking-engagement-date">Mar 2025</div>
+          <div class="speaking-engagement-body">
+            <div class="speaking-engagement-title">AI and Immortality in the Year of the Snake</div>
+            <div class="speaking-engagement-venue">Keynote Address</div>
+          </div>
+          <div class="speaking-engagement-arrow">→</div>
+        </a>
+
+        <a href="https://www.emmanueldaniel.com/sharing-my-insights-on-financial-innovation-at-the-firstbank-fintech-summit-2024/" target="_blank" rel="noopener" class="speaking-engagement-row">
+          <div class="speaking-engagement-date">Jan 2025</div>
+          <div class="speaking-engagement-body">
+            <div class="speaking-engagement-title">DeFi is Setting the Rules by Which Banking Will Be Run</div>
+            <div class="speaking-engagement-venue">FirstBank Fintech Summit 2024</div>
+          </div>
+          <div class="speaking-engagement-arrow">→</div>
+        </a>
+
+        <a href="https://www.emmanueldaniel.com/the-future-of-financial-centers/" target="_blank" rel="noopener" class="speaking-engagement-row">
+          <div class="speaking-engagement-date">Dec 2024</div>
+          <div class="speaking-engagement-body">
+            <div class="speaking-engagement-title">The Future of Financial Centres</div>
+            <div class="speaking-engagement-venue">Opening Keynote — Finance Malta Annual Conference 2024</div>
+          </div>
+          <div class="speaking-engagement-arrow">→</div>
+        </a>
+
+        <a href="https://www.emmanueldaniel.com/what-will-we-be-worrying-about-10-years-from-now/" target="_blank" rel="noopener" class="speaking-engagement-row">
+          <div class="speaking-engagement-date">Jul 2024</div>
+          <div class="speaking-engagement-body">
+            <div class="speaking-engagement-title">What Will We Be Worrying About 10 Years From Now?</div>
+            <div class="speaking-engagement-venue">Awards Dinner Speech</div>
+          </div>
+          <div class="speaking-engagement-arrow">→</div>
+        </a>
+
+        <a href="https://www.emmanueldaniel.com/innovating-finance-at-the-25th-asian-banker-summit/" target="_blank" rel="noopener" class="speaking-engagement-row">
+          <div class="speaking-engagement-date">Jul 2024</div>
+          <div class="speaking-engagement-body">
+            <div class="speaking-engagement-title">DeFi is Now Forcing Change in Banking</div>
+            <div class="speaking-engagement-venue">Welcome Address — 25th Asian Banker Summit, Hong Kong</div>
+          </div>
+          <div class="speaking-engagement-arrow">→</div>
+        </a>
+
+        <a href="https://www.emmanueldaniel.com/taylor-swifts-digital-economics-in-finance/" target="_blank" rel="noopener" class="speaking-engagement-row">
+          <div class="speaking-engagement-date">May 2024</div>
+          <div class="speaking-engagement-body">
+            <div class="speaking-engagement-title">Taylor Swift's Digital Economics in Finance</div>
+            <div class="speaking-engagement-venue">Awards Dinner Speech</div>
+          </div>
+          <div class="speaking-engagement-arrow">→</div>
+        </a>
+
+        <a href="https://www.emmanueldaniel.com/creating-a-successful-global-financial-centre/" target="_blank" rel="noopener" class="speaking-engagement-row">
+          <div class="speaking-engagement-date">Feb 2024</div>
+          <div class="speaking-engagement-body">
+            <div class="speaking-engagement-title">Creating a Successful International Financial Centre</div>
+            <div class="speaking-engagement-venue">Keynote — 20th China International Finance Forum (CIFF), Shanghai</div>
+          </div>
+          <div class="speaking-engagement-arrow">→</div>
+        </a>
+
+      </div>
+      <a href="https://www.emmanueldaniel.com/category/videos/speeches-and-presentations/" target="_blank" rel="noopener" class="speaking-all-link">View all speeches and presentations →</a>
+    </section>
+
+    <div class="speaking-rule reveal"></div>
+
+    <!-- ── ENQUIRY CTA ────────────────────────────────────────── -->
+    <section class="speaking-cta reveal">
+      <div class="speaking-cta-inner">
+        <div class="speaking-cta-label">Book Emmanuel</div>
+        <h2 class="speaking-cta-title">Engage Emmanuel for Your Next Event</h2>
+        <p class="speaking-cta-body">Emmanuel accepts a select number of speaking engagements each year. All presentations are tailored to the client's agenda, audience and objectives. He does not deliver off-the-shelf keynotes.</p>
+        <p class="speaking-cta-body">To enquire about availability, fees and format, please contact his team directly:</p>
+        <div class="speaking-contacts">
+          <a href="mailto:cyu@tab.global" class="speaking-contact-item">
+            <div class="speaking-contact-name">Cindy Yu Si Yu</div>
+            <div class="speaking-contact-email">cyu@tab.global</div>
+          </a>
+          <a href="mailto:efoong@tab.global" class="speaking-contact-item">
+            <div class="speaking-contact-name">Eunice Foong</div>
+            <div class="speaking-contact-email">efoong@tab.global</div>
+          </a>
+          <a href="mailto:jong@tab.global" class="speaking-contact-item">
+            <div class="speaking-contact-name">Jerome Ong</div>
+            <div class="speaking-contact-email">jong@tab.global</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /speaking-page-inner -->
+</main><!-- /#speaking-page -->
+
 <!-- ─── FOOTER ────────────────────────────────────────────── -->
 <footer class="site-footer">
   <div class="footer-inner">
@@ -2935,50 +3538,52 @@
 </footer>
 
 <script>
-  // ─── Blog / Home page switching ────────────────────────────
-  const homePage   = document.querySelector('main:not(#blog-page):not(#books-page)');
-  const blogPage   = document.getElementById('blog-page');
-  const booksPage  = document.getElementById('books-page');
-  const navHome    = document.getElementById('nav-home');
-  const navBlog    = document.getElementById('nav-blog');
-  const navBooks   = document.getElementById('nav-books');
-  const mobNavHome = document.getElementById('mob-nav-home');
-  const mobNavBlog = document.getElementById('mob-nav-blog');
-  const mobNavBooks= document.getElementById('mob-nav-books');
+  const homePage     = document.querySelector('main:not(#blog-page):not(#books-page):not(#speaking-page)');
+  const blogPage     = document.getElementById('blog-page');
+  const booksPage    = document.getElementById('books-page');
+  const speakingPage = document.getElementById('speaking-page');
+  const navHome      = document.getElementById('nav-home');
+  const navBlog      = document.getElementById('nav-blog');
+  const navBooks     = document.getElementById('nav-books');
+  const navSpeaking  = document.getElementById('nav-speaking');
+  const mobNavHome     = document.getElementById('mob-nav-home');
+  const mobNavBlog     = document.getElementById('mob-nav-blog');
+  const mobNavBooks    = document.getElementById('mob-nav-books');
+  const mobNavSpeaking = document.getElementById('mob-nav-speaking');
+
+  const allPages = [homePage, blogPage, booksPage, speakingPage];
+  const allNavLinks = [navHome, navBlog, navBooks, navSpeaking];
 
   function hideAll() {
-    homePage.style.display  = 'none';
-    blogPage.style.display  = 'none';
-    booksPage.style.display = 'none';
-    [navHome, navBlog, navBooks].forEach(el => el && el.classList.remove('active'));
+    allPages.forEach(p => p && (p.style.display = 'none'));
+    allNavLinks.forEach(l => l && l.classList.remove('active'));
   }
   function showHome() {
-    hideAll();
-    homePage.style.display = '';
-    navHome.classList.add('active');
-    window.scrollTo(0, 0);
+    hideAll(); homePage.style.display = ''; navHome.classList.add('active'); window.scrollTo(0,0);
   }
   function showBlog() {
-    hideAll();
-    blogPage.style.display = '';
-    navBlog.classList.add('active');
-    window.scrollTo(0, 0);
+    hideAll(); blogPage.style.display = ''; navBlog.classList.add('active'); window.scrollTo(0,0);
     document.querySelectorAll('#blog-page .reveal').forEach(el => el.classList.add('visible'));
   }
   function showBooks() {
-    hideAll();
-    booksPage.style.display = '';
-    navBooks.classList.add('active');
-    window.scrollTo(0, 0);
+    hideAll(); booksPage.style.display = ''; navBooks.classList.add('active'); window.scrollTo(0,0);
     document.querySelectorAll('#books-page .reveal').forEach(el => el.classList.add('visible'));
   }
+  function showSpeaking() {
+    hideAll(); speakingPage.style.display = ''; navSpeaking.classList.add('active'); window.scrollTo(0,0);
+    document.querySelectorAll('#speaking-page .reveal').forEach(el => el.classList.add('visible'));
+  }
 
-  navHome.addEventListener('click',  e => { e.preventDefault(); showHome(); });
-  navBlog.addEventListener('click',  e => { e.preventDefault(); showBlog(); });
-  navBooks.addEventListener('click', e => { e.preventDefault(); showBooks(); });
-  if (mobNavHome)  mobNavHome.addEventListener('click',  e => { e.preventDefault(); showHome();  mobileNav.classList.remove('open'); document.body.style.overflow = ''; });
-  if (mobNavBlog)  mobNavBlog.addEventListener('click',  e => { e.preventDefault(); showBlog();  mobileNav.classList.remove('open'); document.body.style.overflow = ''; });
-  if (mobNavBooks) mobNavBooks.addEventListener('click', e => { e.preventDefault(); showBooks(); mobileNav.classList.remove('open'); document.body.style.overflow = ''; });
+  navHome.addEventListener('click',     e => { e.preventDefault(); showHome(); });
+  navBlog.addEventListener('click',     e => { e.preventDefault(); showBlog(); });
+  navBooks.addEventListener('click',    e => { e.preventDefault(); showBooks(); });
+  navSpeaking.addEventListener('click', e => { e.preventDefault(); showSpeaking(); });
+
+  function closeMobileNav() { mobileNav.classList.remove('open'); document.body.style.overflow = ''; }
+  if (mobNavHome)     mobNavHome.addEventListener('click',     e => { e.preventDefault(); showHome();     closeMobileNav(); });
+  if (mobNavBlog)     mobNavBlog.addEventListener('click',     e => { e.preventDefault(); showBlog();     closeMobileNav(); });
+  if (mobNavBooks)    mobNavBooks.addEventListener('click',    e => { e.preventDefault(); showBooks();    closeMobileNav(); });
+  if (mobNavSpeaking) mobNavSpeaking.addEventListener('click', e => { e.preventDefault(); showSpeaking(); closeMobileNav(); });
 
 
   const hamburgerBtn = document.getElementById('hamburgerBtn');
