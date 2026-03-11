@@ -2417,7 +2417,7 @@
     }
 
     /* Homepage sections are always visible — no reveal animation needed */
-    main:not(#blog-page):not(#books-page):not(#speaking-page) .reveal {
+    main:not(#blog-page):not(#books-page):not(#speaking-page):not(#about-page):not(#contact-page) .reveal {
       opacity: 1;
       transform: none;
     }
@@ -2818,6 +2818,434 @@
       .about-book-card { flex-direction: column; }
       .about-book-cover-wrap { width: 80px; }
     }
+
+    /* ─── CONTACT SUBPAGE ─────────────────────────────────────── */
+    .contact-page { background: var(--paper); }
+
+    .contact-page-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 2rem 6rem;
+    }
+
+    .contact-header {
+      padding: 3rem 0 2rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .contact-header-label {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 0.7rem;
+    }
+
+    .contact-header-title {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 700;
+      line-height: 1.05;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .contact-divider {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 3rem 0;
+    }
+
+    /* Two-col grid */
+    .contact-main-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    /* ── Left column ── */
+    .contact-intro {
+      font-family: var(--body-serif);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #3d3530;
+      margin-bottom: 2rem;
+    }
+
+    /* ── Contact form ── */
+    .contact-form-wrap {
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-field:last-child { margin-bottom: 0; }
+
+    .contact-label {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+    }
+
+    .contact-input,
+    .contact-textarea {
+      font-family: var(--body-serif);
+      font-size: 0.95rem;
+      color: var(--ink);
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      padding: 0.75rem 0.9rem;
+      width: 100%;
+      box-sizing: border-box;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      border-radius: 0;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .contact-input::placeholder,
+    .contact-textarea::placeholder {
+      color: #b8aa9e;
+      font-style: italic;
+    }
+
+    .contact-input:focus,
+    .contact-textarea:focus {
+      border-color: var(--rust);
+      box-shadow: 0 0 0 2px rgba(181,69,27,0.1);
+    }
+
+    .contact-input.error,
+    .contact-textarea.error {
+      border-color: #c0392b;
+    }
+
+    .contact-textarea {
+      resize: vertical;
+      min-height: 130px;
+      line-height: 1.7;
+    }
+
+    .contact-form-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-form-note {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      color: var(--warm-gray);
+      letter-spacing: 0.04em;
+    }
+
+    .contact-form-note svg { flex-shrink: 0; opacity: 0.6; }
+
+    .contact-submit-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--paper);
+      background: var(--ink);
+      border: none;
+      padding: 0.8rem 1.6rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .contact-submit-btn:hover { background: var(--rust); }
+
+    .contact-submit-btn:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    .contact-submit-btn svg { flex-shrink: 0; }
+
+    .contact-form-error {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      color: #c0392b;
+      margin-top: 0.6rem;
+      min-height: 1rem;
+    }
+
+    /* Success state */
+    .contact-form-success {
+      border: 1px solid var(--rule);
+      background: var(--cream);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-success-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: var(--paper);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.2rem;
+    }
+
+    .contact-success-title {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0 0 0.6rem;
+    }
+
+    .contact-success-body {
+      font-family: var(--body-serif);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #5a4e44;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-success-reset {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--rust);
+      background: none;
+      border: none;
+      border-bottom: 1px solid rgba(181,69,27,0.4);
+      padding: 0 0 2px;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .contact-success-reset:hover { border-color: var(--rust); }
+
+    .contact-social-heading {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+      margin-bottom: 1rem;
+    }
+
+    .contact-social-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--rule);
+    }
+
+    .contact-social-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      padding: 0.85rem 1.1rem;
+      border-bottom: 1px solid var(--rule);
+      text-decoration: none;
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 500;
+      transition: background 0.18s, color 0.18s;
+    }
+
+    .contact-social-btn:last-child { border-bottom: none; }
+
+    .contact-social-btn:hover {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .contact-social-btn svg {
+      flex-shrink: 0;
+      opacity: 0.75;
+      transition: opacity 0.18s;
+    }
+
+    .contact-social-btn:hover svg { opacity: 1; }
+
+    /* ── Right column: Event panel ── */
+    .contact-event-panel {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 2.8rem;
+    }
+
+    .contact-event-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.9rem;
+    }
+
+    .contact-event-title {
+      font-family: var(--serif);
+      font-size: clamp(1.3rem, 2.5vw, 1.85rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--paper);
+      margin: 0 0 1.4rem;
+    }
+
+    .contact-event-body {
+      font-family: var(--body-serif);
+      font-size: 0.92rem;
+      line-height: 1.8;
+      color: rgba(250,247,242,0.72);
+      margin-bottom: 1rem;
+    }
+
+    .contact-event-body a {
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(201,168,76,0.4);
+    }
+
+    .contact-event-body a:hover { border-color: var(--gold); }
+
+    .contact-event-topics {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 1.2rem 0;
+    }
+
+    .contact-event-topics li {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      color: rgba(250,247,242,0.65);
+      padding: 0.45rem 0;
+      padding-left: 1.1rem;
+      position: relative;
+    }
+
+    .contact-event-topics li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 0.6rem;
+    }
+
+    .contact-event-enquiry-label {
+      font-family: var(--sans);
+      font-size: 0.58rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(250,247,242,0.45);
+      margin-bottom: 0.8rem;
+    }
+
+    .contact-event-contacts {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 1.8rem;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .contact-event-contact-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      text-decoration: none;
+      color: var(--paper);
+      transition: background 0.18s;
+    }
+
+    .contact-event-contact-item:last-child { border-bottom: none; }
+
+    .contact-event-contact-item:hover { background: rgba(255,255,255,0.05); }
+
+    .contact-event-contact-name {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--paper);
+    }
+
+    .contact-event-contact-email {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      color: var(--gold);
+      opacity: 0.8;
+    }
+
+    .contact-event-speeches-link {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(201,168,76,0.35);
+      padding-bottom: 1px;
+      transition: border-color 0.2s;
+    }
+
+    .contact-event-speeches-link:hover { border-color: var(--gold); }
+
+    @media (max-width: 860px) {
+      .contact-main-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .contact-field-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .contact-event-panel { padding: 1.8rem; }
+      .contact-event-contact-item { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
+      .contact-form-footer { flex-direction: column; align-items: flex-start; }
+    }
+
   </style>
 </head>
 <body>
@@ -2860,7 +3288,7 @@
       <a href="#">Newsletter</a>
       <a href="#" id="nav-speaking">Speaking</a>
       <a href="#" id="nav-about">About</a>
-      <a href="#">Contact</a>
+      <a href="#" id="nav-contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -2875,6 +3303,7 @@
     <a href="#">Newsletter</a>
     <a href="#" id="mob-nav-speaking">Speaking</a>
     <a href="#" id="mob-nav-about">About</a>
+    <a href="#" id="mob-nav-contact">Contact</a>
   </nav>
   <div class="mobile-nav-sub">
     <a href="#" class="btn-subscribe">Become a Member</a>
@@ -3971,7 +4400,7 @@
             <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M4 4l16 16M4 20L20 4"/><path d="M4 4l5 5m11 11-5-5m-6 0-5 5m16-16-5 5"/><path d="M2 3h6.5L22 21h-6.5L2 3z"/></svg>
             Twitter / X
           </a>
-          <a href="mailto:edaniel@tab.global" class="about-social-link">
+          <a href="/cdn-cgi/l/email-protection#90f5f4f1fef9f5fcd0e4f1f2bef7fcfff2f1fc" class="about-social-link">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             Email
           </a>
@@ -4090,6 +4519,135 @@
   </div><!-- /about-page-inner -->
 </main><!-- /#about-page -->
 
+<!-- ─── CONTACT SUBPAGE ───────────────────────────────────── -->
+<main id="contact-page" class="contact-page" style="display:none;">
+  <div class="contact-page-inner">
+
+    <!-- ── PAGE HEADER ──────────────────────────────────────── -->
+    <div class="contact-header reveal">
+      <div class="contact-header-label">Contact</div>
+      <h1 class="contact-header-title">Get in Touch</h1>
+    </div>
+
+    <div class="contact-divider reveal"></div>
+
+    <!-- ── MAIN CONTACT GRID ────────────────────────────────── -->
+    <div class="contact-main-grid reveal">
+
+      <!-- Left: large email + social -->
+      <div class="contact-left">
+        <p class="contact-intro">Send Emmanuel a message directly. He reads every message personally.</p>
+
+        <!-- Contact form -->
+        <div class="contact-form-wrap" id="contactFormWrap">
+          <div class="contact-field-row">
+            <div class="contact-field">
+              <label class="contact-label" for="cf-name">Your Name</label>
+              <input type="text" id="cf-name" class="contact-input" placeholder="Full name" autocomplete="name" />
+            </div>
+            <div class="contact-field">
+              <label class="contact-label" for="cf-email">Your Email</label>
+              <input type="email" id="cf-email" class="contact-input" placeholder="email@example.com" autocomplete="email" />
+            </div>
+          </div>
+          <div class="contact-field">
+            <label class="contact-label" for="cf-subject">Subject</label>
+            <input type="text" id="cf-subject" class="contact-input" placeholder="What is this regarding?" />
+          </div>
+          <div class="contact-field">
+            <label class="contact-label" for="cf-message">Message</label>
+            <textarea id="cf-message" class="contact-textarea" rows="6" placeholder="Your message…"></textarea>
+          </div>
+          <div class="contact-form-footer">
+            <span class="contact-form-note">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              Sends to edaniel@tab.global
+            </span>
+            <button type="button" class="contact-submit-btn" id="contactSubmitBtn">
+              Send Message
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </div>
+          <div class="contact-form-error" id="contactFormError"></div>
+        </div>
+
+        <!-- Success state -->
+        <div class="contact-form-success" id="contactFormSuccess" style="display:none;">
+          <div class="contact-success-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3 class="contact-success-title">Message sent</h3>
+          <p class="contact-success-body">Thank you for reaching out. Emmanuel will be in touch shortly.</p>
+          <button type="button" class="contact-success-reset" id="contactFormReset">Send another message</button>
+        </div>
+
+        <!-- Social -->
+        <div class="contact-social-heading">Follow Emmanuel</div>
+        <div class="contact-social-row">
+
+          <a href="https://www.facebook.com/emmanueldanielasianbanker" target="_blank" rel="noopener" class="contact-social-btn" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            <span>Facebook</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/emmanueldaniel" target="_blank" rel="noopener" class="contact-social-btn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <span>LinkedIn</span>
+          </a>
+
+          <a href="https://twitter.com/EmmanuelDaniel" target="_blank" rel="noopener" class="contact-social-btn" aria-label="Twitter / X">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M2 3h6.5L22 21h-6.5L2 3z"/></svg>
+            <span>Twitter / X</span>
+          </a>
+
+          <a href="https://www.emmanueldaniel.com/" target="_blank" rel="noopener" class="contact-social-btn" aria-label="Website">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span>emmanueldaniel.com</span>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Right: Engage for Event panel -->
+      <div class="contact-right">
+        <div class="contact-event-panel">
+          <div class="contact-event-eyebrow">Speaking &amp; Events</div>
+          <h2 class="contact-event-title">Engage Emmanuel for Your Next Event</h2>
+          <p class="contact-event-body">Emmanuel is a globally sought-after keynote speaker and moderator on the future of finance, artificial intelligence in banking, geopolitics, and civilisational change. His presentations are always tailored specifically to the client — never off-the-shelf.</p>
+          <p class="contact-event-body">He also provides confidential board-level briefings and facilitates in-house strategy sessions for institutional clients, drawing from the research capabilities of <a href="https://tab.global/" target="_blank" rel="noopener">TAB Global</a>.</p>
+
+          <ul class="contact-event-topics">
+            <li>The AI Bank — institutional redesign for the age of AI</li>
+            <li>The Great Transition — personalisation of finance</li>
+            <li>Geopolitics &amp; the future of global financial centres</li>
+            <li>Innovation, disruption and leadership in banking</li>
+          </ul>
+
+          <div class="contact-event-enquiry-label">To engage Emmanuel, contact his team:</div>
+          <div class="contact-event-contacts">
+            <a href="mailto:cyu@tab.global" class="contact-event-contact-item">
+              <span class="contact-event-contact-name">Cindy Yu Si Yu</span>
+              <span class="contact-event-contact-email">cyu@tab.global</span>
+            </a>
+            <a href="mailto:efoong@tab.global" class="contact-event-contact-item">
+              <span class="contact-event-contact-name">Eunice Foong</span>
+              <span class="contact-event-contact-email">efoong@tab.global</span>
+            </a>
+            <a href="mailto:jong@tab.global" class="contact-event-contact-item">
+              <span class="contact-event-contact-name">Jerome Ong</span>
+              <span class="contact-event-contact-email">jong@tab.global</span>
+            </a>
+          </div>
+
+          <a href="https://www.emmanueldaniel.com/category/videos/speeches-and-presentations/" target="_blank" rel="noopener" class="contact-event-speeches-link">View previous engagements →</a>
+        </div>
+      </div>
+
+    </div><!-- /contact-main-grid -->
+
+  </div><!-- /contact-page-inner -->
+</main><!-- /#contact-page -->
+
 <!-- ─── FOOTER ────────────────────────────────────────────── -->
 <footer class="site-footer">
   <div class="footer-inner">
@@ -4144,43 +4702,46 @@
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  const homePage     = document.querySelector('main:not(#blog-page):not(#books-page):not(#speaking-page)');
+  const homePage     = document.querySelector('main:not(#blog-page):not(#books-page):not(#speaking-page):not(#about-page):not(#contact-page)');
   const blogPage     = document.getElementById('blog-page');
   const booksPage    = document.getElementById('books-page');
   const speakingPage = document.getElementById('speaking-page');
   const aboutPage    = document.getElementById('about-page');
+  const contactPage  = document.getElementById('contact-page');
   const navHome      = document.getElementById('nav-home');
   const navBlog      = document.getElementById('nav-blog');
   const navBooks     = document.getElementById('nav-books');
   const navSpeaking  = document.getElementById('nav-speaking');
   const navAbout     = document.getElementById('nav-about');
+  const navContact   = document.getElementById('nav-contact');
   const mobNavHome     = document.getElementById('mob-nav-home');
   const mobNavBlog     = document.getElementById('mob-nav-blog');
   const mobNavBooks    = document.getElementById('mob-nav-books');
   const mobNavSpeaking = document.getElementById('mob-nav-speaking');
   const mobNavAbout    = document.getElementById('mob-nav-about');
+  const mobNavContact  = document.getElementById('mob-nav-contact');
 
-  const allPages = [homePage, blogPage, booksPage, speakingPage, aboutPage];
-  const allNavLinks = [navHome, navBlog, navBooks, navSpeaking, navAbout];
+  const allPages = [homePage, blogPage, booksPage, speakingPage, aboutPage, contactPage];
+  const allNavLinks = [navHome, navBlog, navBooks, navSpeaking, navAbout, navContact];
 
   function hideAll() {
     allPages.forEach(p => p && (p.style.display = 'none'));
     allNavLinks.forEach(l => l && l.classList.remove('active'));
   }
   function showHome() {
-    hideAll(); homePage.style.display = ''; navHome.classList.add('active'); window.scrollTo(0,0);
-    document.querySelectorAll('main:not(#blog-page):not(#books-page):not(#speaking-page) .reveal').forEach(el => el.classList.add('visible'));
+    hideAll(); homePage.style.display = ''; navHome && navHome.classList.add('active'); window.scrollTo(0,0);
+    document.querySelectorAll('main:not(#blog-page):not(#books-page):not(#speaking-page):not(#about-page):not(#contact-page) .reveal').forEach(el => el.classList.add('visible'));
   }
   function showBlog() {
-    hideAll(); blogPage.style.display = ''; navBlog.classList.add('active'); window.scrollTo(0,0);
+    hideAll(); blogPage.style.display = ''; navBlog && navBlog.classList.add('active'); window.scrollTo(0,0);
     document.querySelectorAll('#blog-page .reveal').forEach(el => el.classList.add('visible'));
   }
   function showBooks() {
-    hideAll(); booksPage.style.display = ''; navBooks.classList.add('active'); window.scrollTo(0,0);
+    hideAll(); booksPage.style.display = ''; navBooks && navBooks.classList.add('active'); window.scrollTo(0,0);
     document.querySelectorAll('#books-page .reveal').forEach(el => el.classList.add('visible'));
   }
   function showSpeaking() {
-    hideAll(); speakingPage.style.display = ''; navSpeaking.classList.add('active'); window.scrollTo(0,0);
+    hideAll(); speakingPage.style.display = ''; navSpeaking && navSpeaking.classList.add('active'); window.scrollTo(0,0);
     document.querySelectorAll('#speaking-page .reveal').forEach(el => el.classList.add('visible'));
   }
 
@@ -4244,7 +4805,7 @@
 
   // Ensure homepage sections visible on first load (observer may miss off-screen elements)
   setTimeout(() => {
-    document.querySelectorAll('main:not(#blog-page):not(#books-page):not(#speaking-page) .reveal').forEach(el => el.classList.add('visible'));
+    document.querySelectorAll('main:not(#blog-page):not(#books-page):not(#speaking-page):not(#about-page):not(#contact-page) .reveal').forEach(el => el.classList.add('visible'));
   }, 100);
 
   // ─── Newsletter Form ────────────────────────────────────────
@@ -4272,12 +4833,80 @@
     });
   }
 
-  if (navAbout)     navAbout.addEventListener('click',    e => { e.preventDefault(); showAbout(); });
-  if (mobNavAbout)  mobNavAbout.addEventListener('click', e => { e.preventDefault(); showAbout(); mobileNav.classList.remove('open'); document.body.style.overflow = ''; });
+  function showContact() {
+    hideAll(); contactPage.style.display = ''; navContact && navContact.classList.add('active'); window.scrollTo(0,0);
+    document.querySelectorAll('#contact-page .reveal').forEach(el => el.classList.add('visible'));
+  }
+
+  if (navAbout)    navAbout.addEventListener('click',   e => { e.preventDefault(); showAbout(); });
+  if (navContact)   navContact.addEventListener('click',  e => { e.preventDefault(); showContact(); });
+  if (mobNavAbout)  mobNavAbout.addEventListener('click', e => { e.preventDefault(); showAbout();   mobileNav.classList.remove('open'); document.body.style.overflow = ''; });
+  if (mobNavContact) mobNavContact.addEventListener('click', e => { e.preventDefault(); showContact(); mobileNav.classList.remove('open'); document.body.style.overflow = ''; });
 
   // About page cross-links
   const aboutGotoBooks = document.getElementById('about-goto-books');
   if (aboutGotoBooks) aboutGotoBooks.addEventListener('click', e => { e.preventDefault(); showBooks(); });
+
+  // ─── Contact Form ────────────────────────────────────────
+  const contactSubmitBtn  = document.getElementById('contactSubmitBtn');
+  const contactFormReset  = document.getElementById('contactFormReset');
+  const contactFormWrap   = document.getElementById('contactFormWrap');
+  const contactFormSuccess = document.getElementById('contactFormSuccess');
+  const contactFormError  = document.getElementById('contactFormError');
+
+  if (contactSubmitBtn) {
+    contactSubmitBtn.addEventListener('click', () => {
+      const name    = document.getElementById('cf-name');
+      const email   = document.getElementById('cf-email');
+      const subject = document.getElementById('cf-subject');
+      const message = document.getElementById('cf-message');
+
+      // Clear previous errors
+      [name, email, subject, message].forEach(el => el.classList.remove('error'));
+      contactFormError.textContent = '';
+
+      // Validate
+      let valid = true;
+      if (!name.value.trim())    { name.classList.add('error');    valid = false; }
+      if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        email.classList.add('error'); valid = false;
+      }
+      if (!message.value.trim()) { message.classList.add('error'); valid = false; }
+
+      if (!valid) {
+        contactFormError.textContent = 'Please fill in all required fields correctly.';
+        return;
+      }
+
+      // Build mailto link and open
+      const to  = 'edaniel@tab.global';
+      const sub = encodeURIComponent(subject.value.trim() || `Message from ${name.value.trim()}`);
+      const body = encodeURIComponent(
+        `Name: ${name.value.trim()}\nEmail: ${email.value.trim()}\n\n${message.value.trim()}`
+      );
+      window.location.href = `mailto:${to}?subject=${sub}&body=${body}`;
+
+      // Show success state
+      contactSubmitBtn.disabled = true;
+      setTimeout(() => {
+        contactFormWrap.style.display = 'none';
+        contactFormSuccess.style.display = '';
+      }, 400);
+    });
+  }
+
+  if (contactFormReset) {
+    contactFormReset.addEventListener('click', () => {
+      ['cf-name','cf-email','cf-subject','cf-message'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) { el.value = ''; el.classList.remove('error'); }
+      });
+      if (contactFormError) contactFormError.textContent = '';
+      if (contactSubmitBtn) contactSubmitBtn.disabled = false;
+      contactFormSuccess.style.display = 'none';
+      contactFormWrap.style.display = '';
+    });
+  }
 
   // ─── Active nav on scroll ───────────────────────────────────
   // Simple header hide on deep scroll, show on scroll up
