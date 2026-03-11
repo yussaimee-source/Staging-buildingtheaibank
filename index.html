@@ -3677,6 +3677,7 @@
   }
   function showHome() {
     hideAll(); homePage.style.display = ''; navHome.classList.add('active'); window.scrollTo(0,0);
+    document.querySelectorAll('main:not(#blog-page):not(#books-page):not(#speaking-page) .reveal').forEach(el => el.classList.add('visible'));
   }
   function showBlog() {
     hideAll(); blogPage.style.display = ''; navBlog.classList.add('active'); window.scrollTo(0,0);
@@ -3739,6 +3740,11 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
   revealEls.forEach(el => revealObserver.observe(el));
+
+  // Ensure homepage sections visible on first load (observer may miss off-screen elements)
+  setTimeout(() => {
+    document.querySelectorAll('main:not(#blog-page):not(#books-page):not(#speaking-page) .reveal').forEach(el => el.classList.add('visible'));
+  }, 100);
 
   // ─── Newsletter Form ────────────────────────────────────────
   const newsletterBtn = document.querySelector('.newsletter-form button');
