@@ -2416,6 +2416,12 @@
       transform: none;
     }
 
+    /* Homepage sections are always visible — no reveal animation needed */
+    main:not(#blog-page):not(#books-page):not(#speaking-page) .reveal {
+      opacity: 1;
+      transform: none;
+    }
+
     /* ─── RESPONSIVE ──────────────────────────────────────── */
     @media (max-width: 900px) {
       .masthead {
